@@ -15,6 +15,7 @@ import { AboutModule } from './about/about.module';
 import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     FormsModule,
     HttpClientModule,
+    NgxDatatableModule,
     TranslateModule.forRoot(),
     BrowserAnimationsModule,
     MaterialModule,
@@ -31,6 +33,9 @@ import { AppRoutingModule } from './app-routing.module';
     AboutModule,
     LoginModule,
     AppRoutingModule
+  ],
+  exports:[
+    NgxDatatableModule
   ],
   declarations: [AppComponent],
   providers: [

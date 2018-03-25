@@ -9,6 +9,7 @@ import { MaterialModule } from '@app/material.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { QuoteService } from './quote.service';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { QuoteService } from './quote.service';
     CoreModule,
     SharedModule,
     FlexLayoutModule,
+    NgxDatatableModule,
     MaterialModule,
     HomeRoutingModule
   ],

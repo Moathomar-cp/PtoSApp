@@ -9,6 +9,19 @@
         <app-loader [isLoading]="isLoading" size="1.5"></app-loader>
         <q [hidden]="isLoading">{{quote}}</q>
       </mat-card-subtitle>
+
     </mat-card-content>
   </mat-card>
+
+
+  <ngx-datatable
+  class="material"
+  [rows]="rows"
+  [columns]="[{name:'Name'},{name:'Gender'},{name:'Company'}]"
+  [columnMode]="'force'"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  [rowHeight]="'auto'"
+  [limit]="10">
+</ngx-datatable>
 </div>
