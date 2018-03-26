@@ -16,6 +16,7 @@ import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductsModule } from '@app/products/products.module';
+import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { ProductsModule } from '@app/products/products.module';
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     FormsModule,
     HttpClientModule,
+    NgxDatatableModule,
     TranslateModule.forRoot(),
     BrowserAnimationsModule,
     MaterialModule,
@@ -33,9 +35,9 @@ import { ProductsModule } from '@app/products/products.module';
     LoginModule,
     ProductsModule,
     AppRoutingModule,
-   
-   
-   
+  ],
+  exports:[
+    NgxDatatableModule
   ],
   declarations: [AppComponent],
   providers: [
