@@ -52,7 +52,7 @@ border-color:rgba(208, 209, 214, 0.993);
     text-align: right;
     margin-top :20px;
     margin-bottom: 20px;
-    margin-right: 200px;
+    margin-right: 20px;
  }
  
   .section label{ 
@@ -65,3 +65,21 @@ border-color:rgba(208, 209, 214, 0.993);
    text-align: right;
   } 
 
+
+
+  .action{
+    text-align: center;
+    }
+    
+  .action a{
+     color: black;
+   }
+
+
+  .add-btn {
+    background-color: rgb(51, 74, 97);
+    color: #fff;
+    float: left;
+    margin-top: 20px;
+    margin-left: 15px;
+   } 
