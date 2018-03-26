@@ -14,9 +14,38 @@
  }
  
  
+ .form-control {
+   
+   display:inline-block;
+    width: 80px;
+}
 
- 
- 
+
+.supplier {
+    width:100px;
+}
+
+
+.product-type {
+  width:120px; 
+}
+
+
+.selectors {
+   margin-top: 60px; 
+}
+
+
+.fillter{
+   float: right; 
+}
+
+.fillter button {
+margin-bottom: 5px;
+background-color: #fff;
+border-color:rgba(208, 209, 214, 0.993);
+}
+
  
 
  
