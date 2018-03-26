@@ -16,6 +16,8 @@ import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
+import { ExpensesListModule } from './expenses-list/expenses-list.module';
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 @NgModule({
   imports: [
@@ -32,9 +34,11 @@ import { NgxDatatableModule } from "@swimlane/ngx-datatable";
     HomeModule,
     AboutModule,
     LoginModule,
+    ExpensesListModule,
+    Ng4LoadingSpinnerModule.forRoot(),
     AppRoutingModule
   ],
-  exports:[
+  exports: [
     NgxDatatableModule
   ],
   declarations: [AppComponent],

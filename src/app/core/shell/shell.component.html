@@ -8,9 +8,13 @@
             <span translate>Home</span>
           </a>
           <mat-divider></mat-divider>
-          <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="sidenav.close()">
-            <span translate>About</span>
-          </a>
+            <a mat-list-item routerLink="/expense" routerLinkActive="active" (click)="sidenav.close()">
+              <span translate><i class="fa fa-usd"></i> Expense</span>
+            </a>
+          <mat-divider></mat-divider>
+            <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="sidenav.close()">
+              <span translate>About</span>
+            </a>
           <mat-divider></mat-divider>
         </mat-list>
       </nav>
