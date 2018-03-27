@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <h3 class="col-lg-4">Expence</h3>
+    <input type="text" class="form-control col-lg-4" placeholder="Search ...">
+    <div class="col-lg-4 input-sm show-entites">
+      <!-- search about what ?? // this is not complete -->
+      <label>
+        <select #selectNumOfElem (change)="show(numOptSelected)" class="form-control ">
+          <option *ngFor="let numOpt of numOpts" [value]="numOptSelected">
+            {{numOpt}}
+          </option>
+        </select>
+      </label>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <!-- glyphicon glyphicon-search -->
+ 
+  <div class="divTable">
+    <table class="table table-borderd table-stripped table-condensed table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Store</th>
+          <th>Created By</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let expenseItem of expensesList">
+          <td>{{expenseItem.date}}</td>
+          <td>{{expenseItem.description}}</td>
+          <td>{{expenseItem.amount}}</td>
+          <td>{{expenseItem.category}}</td>
+          <td>{{expenseItem.store}}</td>
+          <td>{{expenseItem.category}}</td>
+          <td>actionnnnn</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
