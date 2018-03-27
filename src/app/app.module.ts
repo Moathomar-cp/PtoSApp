@@ -31,8 +31,8 @@ import { SalesModule } from './sales/sales.module';
     HomeModule,
     AboutModule,
     LoginModule,
-    AppRoutingModule,
-    SalesModule
+    SalesModule,
+    AppRoutingModule
   ],
   declarations: [AppComponent],
   providers: [
