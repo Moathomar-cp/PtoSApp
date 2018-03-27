@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SalesListItem } from '../model';
+import { SALESITEMS } from '../mock-data';
 
 @Component({
   selector: 'app-sales',
@@ -6,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sales.component.scss']
 })
 export class SalesComponent implements OnInit {
-
+   sales: SalesListItem []= [];
+   salesItems = SALESITEMS ;
+   
   constructor() { }
 
   ngOnInit() {
