@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductsModule } from '@app/products/products.module';
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { NgxDatatableModule } from "@swimlane/ngx-datatable";
     AboutModule,
     LoginModule,
     ProductsModule,
+    Ng4LoadingSpinnerModule.forRoot(),
     AppRoutingModule,
   ],
   exports:[
