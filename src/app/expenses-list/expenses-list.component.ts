@@ -18,15 +18,17 @@ export class ExpensesListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData() {
     this.spinnerService.show();
     setTimeout(() => {
       /** spinner ends after 2 seconds */
-      this.getData();
+      this.expensesList = expensesListMock;
       this.spinnerService.hide();
     }, 2000);
   }
-  getData() {
-    this.expensesList = expensesListMock;
-  }
-  show() {}
+
+  show() { }
 }
