@@ -1,28 +1,39 @@
+<script src="./sales.js"></script>
+
+<!-- /////////////// -->
 <div class="container">
   <h3>Sales</h3>
   <br />
   <br />
- <!-- show -->
- <div class="show">
- <label>Show 
-   <select >
-   <option value="10">10</option>
-   <option value="25">25</option>
-   <option value="50">50</option>
-   <option value="100">100</option>
-   </select> entries
-  </label>
+  <!-- show -->
+  <div class="show">
+    <label>Show
+      <select>
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select> entries
+    </label>
 
-  <!--search -->
-  <div class ="search">
+    <!--search -->
+    <div class="search">
       <label>Search:
         <input type="text">
-      </label></div>
+      </label>
     </div>
-  
+    
+    <div id="pid" class="spinner">
+        <ul class="fa-ul spinner">
+            <li class="fa-li fa fa-spinner fa-spin" style="font-size:50px;">
+              </li>
+          </ul>
+          </div>
+  </div>
 
-  <!-- sales table -->  
-  <table class="table table-striped table-bordered">
+  <!-- sales table -->
+
+  <table class="table table-striped table-bordered" id="myTable">
     <thead>
       <tr>
         <th>Number</th>
@@ -34,10 +45,12 @@
         <th>Total Items</th>
         <th>Status</th>
         <th>Action</th>
-
       </tr>
+
     </thead>
     <tbody>
+    
+
       <tr *ngFor="let item of salesItems">
         <td>{{item.number}}</td>
         <td>{{item.custumer}}</td>
@@ -46,19 +59,22 @@
         <td>{{item.total}}</td>
         <td>{{item.createdBy}}</td>
         <td>{{item.totalItems}}</td>
-        <td><span class="paid">{{item.status}}<span></span></span></td>
+        <td>
+          <span class="paid">{{item.status}}
+            <span></span>
+          </span>
+        </td>
         <td>
 
-                   <a><i class="fa fa-cog fa-fw "></i> Action</a>
-                            <a class="btn btn-primary dropdown-toggle " href="# " data-toggle="dropdown ">
-                            <span title="Toggle dropdown menu " class="fa fa-caret-down "></span>
-                            </a>
-              
-                
-            </td>
-                    
-          </tr>
-        </tbody>
-      </table>
-      
-  
+          <a>
+            <i class="fa fa-cog fa-fw "></i> Action</a>
+          <a class="btn btn-primary dropdown-toggle " href="# " data-toggle="dropdown ">
+            <span title="Toggle dropdown menu " class="fa fa-caret-down "></span>
+          </a>
+
+
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
