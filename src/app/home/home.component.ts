@@ -13,7 +13,14 @@ export class HomeComponent implements OnInit {
   quote: string;
   isLoading: boolean;
 
-  constructor(private quoteService: QuoteService) { }
+  rows: any[] = [];
+
+  constructor(private quoteService: QuoteService) {
+
+    this.fetch((data: any) => {
+      this.rows = data;
+    });
+  }
 
   ngOnInit() {
     this.isLoading = true;
@@ -21,5 +28,17 @@ export class HomeComponent implements OnInit {
       .pipe(finalize(() => { this.isLoading = false; }))
       .subscribe((quote: string) => { this.quote = quote; });
   }
+
+  fetch(cb: (v:any) => void) {
+    const req = new XMLHttpRequest();
+    req.open('GET', `assets/data/company.json`);
+
+    req.onload = () => {
+      cb(JSON.parse(req.response));
+    };
+
+    req.send();
+  }
+
 
 }

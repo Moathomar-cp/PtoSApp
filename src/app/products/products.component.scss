@@ -1,0 +1,85 @@
+
+  .container {
+    margin-top: 20px;
+    }
+    
+     
+ .selectors {
+    margin-top: 60px; 
+    }
+
+
+ .label {
+    display: inline;
+ }
+ 
+ 
+ .form-control {
+   
+   display:inline-block;
+    width: 80px;
+}
+
+
+.supplier {
+    width:100px;
+}
+
+
+.product-type {
+  width:120px; 
+}
+
+
+.selectors {
+   margin-top: 60px; 
+}
+
+
+.fillter{
+   float: right; 
+}
+
+.fillter button {
+margin-bottom: 5px;
+background-color: #fff;
+border-color:rgba(208, 209, 214, 0.993);
+}
+
+ 
+
+.search {
+    text-align: right;
+    margin-top :20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+ }
+ 
+  .section label{ 
+     text-align: right;
+     
+  }
+ 
+  .search input {
+   left: right;
+   text-align: right;
+  } 
+
+
+
+  .action{
+    text-align: center;
+    }
+    
+  .action a{
+     color: black;
+   }
+
+
+  .add-btn {
+    background-color: rgb(51, 74, 97);
+    color: #fff;
+    float: left;
+    margin-top: 20px;
+    margin-left: 15px;
+   } 
