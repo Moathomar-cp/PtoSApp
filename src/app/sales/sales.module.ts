@@ -1,6 +1,6 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { SalesRoutingModule } from './sales-routing.module';
 import { SalesComponent } from './sales.component';
 
@@ -11,4 +11,6 @@ import { SalesComponent } from './sales.component';
   ],
   declarations: [SalesComponent]
 })
-export class SalesModule { }
+export class SalesModule {
+  
+ }
