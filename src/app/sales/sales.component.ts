@@ -10,32 +10,28 @@ import { SALESITEMS } from '../mock-data';
   styleUrls: ['./sales.component.scss']
 })
 export class SalesComponent implements OnInit {
-  
-  
 
-   salesItems : SalesListItem[];   
+  isLoadingItems = false;
+
+  salesItems: SalesListItem[] = [];
   constructor() {
-   }
-   
-  ngOnInit() {
-    
-    document.getElementById('pid').style.display = "block";
-
-
-    setTimeout(() => {
-      document.getElementById('pid').style.display = "none";
-
-
-          this.newMethod();
-    },400);
-     
   }
+
+  ngOnInit() {
+    this.getSalesList();
+  }
+
   private newMethod() {
     this.getSalesList();
   }
 
-   getSalesList(){
-     this.salesItems =   SALESITEMS ;
-   }
+  getSalesList() {
+
+    this.isLoadingItems = true;
+    setTimeout(() => {
+      this.salesItems = SALESITEMS;
+      this.isLoadingItems = false;
+    }, 2000);
+  }
 
 }

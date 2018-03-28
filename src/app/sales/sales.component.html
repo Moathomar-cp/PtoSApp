@@ -1,6 +1,4 @@
-<script src="./sales.js"></script>
 
-<!-- /////////////// -->
 <div class="container">
   <h3>Sales</h3>
   <br />
@@ -22,13 +20,13 @@
         <input type="text">
       </label>
     </div>
-    
-    <div id="pid" class="spinner">
-        <ul class="fa-ul spinner">
-            <li class="fa-li fa fa-spinner fa-spin" style="font-size:50px;">
-              </li>
-          </ul>
-          </div>
+
+    <!-- <div id="pid" class="spinner">
+      <ul class="fa-ul spinner">
+        <li class="fa-li fa fa-spinner fa-spin" style="font-size:50px;">
+        </li>
+      </ul>
+    </div> -->
   </div>
 
   <!-- sales table -->
@@ -49,7 +47,9 @@
 
     </thead>
     <tbody>
-    
+      <tr [class.hidden]="!isLoadingItems">
+        <td colspan="9" class="text-center"> <i class="fa fa-spinner fa-spin"></i> loading .... </td>
+      </tr>
 
       <tr *ngFor="let item of salesItems">
         <td>{{item.number}}</td>
@@ -65,16 +65,11 @@
           </span>
         </td>
         <td>
-
-          <a>
-            <i class="fa fa-cog fa-fw "></i> Action</a>
           <a class="btn btn-primary dropdown-toggle " href="# " data-toggle="dropdown ">
-            <span title="Toggle dropdown menu " class="fa fa-caret-down "></span>
+              <i class="fa fa-cog fa-fw "></i> Action
+              <span title="Toggle dropdown menu "></span>
           </a>
-
-
         </td>
-
       </tr>
     </tbody>
   </table>
