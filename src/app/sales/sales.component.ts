@@ -24,13 +24,18 @@ export class SalesComponent implements OnInit {
    }
    
   ngOnInit() {
-    this.newMethod();
+
+    setTimeout(() => {
+      this.newMethod();
+    },400);
+
+    //this.newMethod();
   }
   private newMethod() {
-    this.getList();
+    this.getSalesList();
   }
 
-   getList(){
+   getSalesList(){
      this.salesItems =   SALESITEMS ;
    }
 
