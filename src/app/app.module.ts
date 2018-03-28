@@ -16,6 +16,10 @@ import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SalesModule } from './sales/sales.module';
+import { ProductsModule } from '@app/products/products.module';
+import { NgxDatatableModule } from "@swimlane/ngx-datatable";
+import { ExpensesListModule } from './expenses-list/expenses-list.module';
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 @NgModule({
   imports: [
@@ -23,6 +27,7 @@ import { SalesModule } from './sales/sales.module';
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     FormsModule,
     HttpClientModule,
+    NgxDatatableModule,
     TranslateModule.forRoot(),
     BrowserAnimationsModule,
     MaterialModule,
@@ -32,7 +37,13 @@ import { SalesModule } from './sales/sales.module';
     AboutModule,
     LoginModule,
     SalesModule,
-    AppRoutingModule
+    ExpensesListModule,
+    Ng4LoadingSpinnerModule.forRoot(),
+    ProductsModule,
+    AppRoutingModule,
+  ],
+  exports: [
+    NgxDatatableModule
   ],
   declarations: [AppComponent],
   providers: [
