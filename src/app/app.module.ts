@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProductsModule } from '@app/products/products.module';
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { MatDialogModule } from '@angular/material';
 
 @NgModule({
   imports: [

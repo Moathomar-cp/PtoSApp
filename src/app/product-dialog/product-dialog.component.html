@@ -1,0 +1,130 @@
+<div class="mat-container">
+  <h1 mat-dialog-title>Add Product
+    <button class="closebtn">X</button>
+  </h1>
+
+  <mat-dialog-content>
+    <form>
+
+      <div class="form-group">
+        <label for="type">Type</label>
+        <select class="form-control" id="typeId">
+          <option class="active">Standard</option>
+          <option>Service</option>
+          <option>Combination</option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="code">Code</label>
+        <input type="text" class="form-control" maxlength="20" id="code" placeholder="Code">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="name" required>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select class="form-control" id="categoryId">
+          <option>Standard</option>
+          <option>Service</option>
+          <option>Combination</option>
+        </select>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="Supplier">Supplier</label>
+        <select class="form-control" id="supplierSelect">
+          <option>Supplier1</option>
+          <option>Supplier2</option>
+          <option>Supplier3</option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="Purchase Price">Purchase Price (EUR)</label>
+        <input type="number" step="any" value="0" min="0" class="form-control" id="purchaseP" placeholder="Purchase Price">
+      </div>
+
+
+      <div class="form-group">
+        <label for="tax">Tax(%)</label>
+        <input type="text" class="form-control" id="tax" placeholder="tax(%)">
+      </div>
+
+
+      <div class="form-group">
+        <label for="Tax Method">Tax Method</label>
+        <select class="form-control" id="taxMethod">
+          <option>inclusive</option>
+          <option>exclusive</option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="Price">Price(EUR)</label>
+        <input type="number" step="any" value="0" min="0" class="form-control" id="price" placeholder="Price">
+      </div>
+
+
+      <div class="form-group">
+        <label for="Product Unit">Product Unit</label>
+        <input type="text" class="form-control" id="pUnit" placeholder="Product Unit">
+      </div>
+
+
+      <div class="form-group">
+        <label for="alertQty">Alert Quantity</label>
+        <input type="number" step="any" value="0" min="0" class="form-control" id="alertQty" placeholder="Alert Quantity">
+      </div>
+
+      <div class="form-group">
+        <label for="FormControlFile1">Input Image</label>
+        <input type="file" class="form-control-file" id="imgInput">
+      </div>
+
+
+      <div class="form-group">
+        <label for="Textarea">Product Description</label>
+        <textarea class="form-control" id="description" rows="4"></textarea>
+      </div>
+
+      <div>
+        <p class="">Choose color to Display in POS.</p>
+        <div class="btn-group " data-toggle="buttons">
+          <button class="radio-inline">
+            <input type="radio" name="optradio">C1</button>
+          <button class="radio-inline">
+            <input type="radio" name="optradio">C2</button>
+          <button class="radio-inline">
+            <input type="radio" name="optradio">C3</button>
+          <button class="radio-inline">
+            <input type="radio" name="optradio">C4</button>
+          <button class="radio-inline">
+            <input type="radio" name="optradio">C5</button>
+          <button class="radio-inline">
+            <input type="radio" name="optradio">C6</button>
+          <button class="radio-inline">
+            <input type="radio" name="optradio">7 </button>
+        </div>
+      </div>
+
+    </form>
+  </mat-dialog-content>
+
+
+  <mat-dialog-actions class="mat-actions">
+    <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+    <button mat-button [mat-dialog-close]="true" class="btn btn-primary close-btn">close</button>
+  </mat-dialog-actions>
+
+</div>

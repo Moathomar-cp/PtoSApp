@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
 import { PRODUCTS } from './mock-products';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { ProductDialogComponent } from '../product-dialog/product-dialog.component';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -10,8 +13,9 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 export class ProductsComponent implements OnInit {
   searchText :string;
   products : Product[];
-
-  constructor(private spinnerService: Ng4LoadingSpinnerService) { }
+  dialogRef: MatDialogRef<ProductDialogComponent>;
+ 
+  constructor(private spinnerService: Ng4LoadingSpinnerService,public dialog: MatDialog) { }
 
   ngOnInit() {
 
@@ -25,4 +29,21 @@ export class ProductsComponent implements OnInit {
   this.products = PRODUCTS;
   }
 
+  openDialog(){
+   /*  this.dialogRef = this.dialog.open(ProductDialogComponent, {
+      hasBackdrop: false}); */ 
+
+      this.dialogRef = this.dialog.open(ProductDialogComponent, {
+        width: '600px', 
+        height:'700px',
+          
+      });
+
+  }
+
 }
+
+
+
+
+
