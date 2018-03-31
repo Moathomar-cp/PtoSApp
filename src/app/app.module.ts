@@ -21,6 +21,8 @@ import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { ExpensesListModule } from './expenses-list/expenses-list.module';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { ExpenseFormComponent } from './expense-form/expense-form.component';
+import { MatDialogModule } from '@angular/material';
+
 
 @NgModule({
   imports: [
@@ -42,6 +44,7 @@ import { ExpenseFormComponent } from './expense-form/expense-form.component';
     ExpensesListModule,
     Ng4LoadingSpinnerModule.forRoot(),
     ProductsModule,
+    MatDialogModule,
     AppRoutingModule,
   ],
   exports: [
@@ -50,7 +53,7 @@ import { ExpenseFormComponent } from './expense-form/expense-form.component';
   declarations: [AppComponent, ExpenseFormComponent],
   providers: [
   ],
-
+  entryComponents: [ExpenseFormComponent] ,
   bootstrap: [AppComponent]
 })
 export class AppModule { }
