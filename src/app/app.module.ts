@@ -20,9 +20,11 @@ import { ProductsModule } from '@app/products/products.module';
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { ExpensesListModule } from './expenses-list/expenses-list.module';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { ExpenseFormComponent } from './expense-form/expense-form.component';
 
 @NgModule({
   imports: [
+
     BrowserModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     FormsModule,
@@ -45,9 +47,10 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
   exports: [
     NgxDatatableModule
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, ExpenseFormComponent],
   providers: [
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
