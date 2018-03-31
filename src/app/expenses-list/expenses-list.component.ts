@@ -17,7 +17,7 @@ export class ExpensesListComponent implements OnInit {
 
   fileNameDialogRef: MatDialogRef<ExpenseFormComponent>;
 
-  openAddEepenseDialog() {
+  openAddExpenseDialog() {
     this.fileNameDialogRef = this.dialog.open(ExpenseFormComponent, {
       height:'90%', width: '600px' ,
       });   
