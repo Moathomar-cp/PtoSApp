@@ -15,13 +15,7 @@ import { MatDialog, MatDialogRef } from '@angular/material';
 })
 export class ExpensesListComponent implements OnInit {
 
-  fileNameDialogRef: MatDialogRef<ExpenseFormComponent>;
-
-  openAddFileDialog() {
-    this.fileNameDialogRef = this.dialog.open(ExpenseFormComponent, {
-      height:'90%', width: '600px' ,
-      });   
-  }
+ 
 
   expensesList: ExpensesListItem[];
   numOpts: number[] = [10, 20, 30];
