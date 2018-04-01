@@ -11,5 +11,14 @@ export const environment = {
   supportedLanguages: [
     'en-US',
     'fr-FR'
-  ]
+  ],
+
+  firebase: {
+    apiKey: "AIzaSyA5CLPvp0CMpNePd6OHmSpqUSMKErG9tiI",
+    authDomain: "angularfb-ff0f6.firebaseapp.com",
+    databaseURL: "https://angularfb-ff0f6.firebaseio.com",
+    projectId: "angularfb-ff0f6",
+    storageBucket: "angularfb-ff0f6.appspot.com",
+    messagingSenderId: "704140842690"
+  }  
 };
