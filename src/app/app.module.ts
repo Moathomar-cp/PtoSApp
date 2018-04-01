@@ -7,7 +7,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 
-import { environment } from '@env/environment';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { HomeModule } from './home/home.module';
@@ -20,6 +19,15 @@ import { ProductsModule } from '@app/products/products.module';
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { ExpensesListModule } from './expenses-list/expenses-list.module';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '@env/environment';
+
+import { ProvidersModule } from './providers/providers.module';
+
 
 @NgModule({
   imports: [
@@ -40,6 +48,11 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
     ExpensesListModule,
     Ng4LoadingSpinnerModule.forRoot(),
     ProductsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule,
+    ProvidersModule,
     AppRoutingModule,
   ],
   exports: [
