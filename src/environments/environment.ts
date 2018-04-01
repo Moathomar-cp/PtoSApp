@@ -11,5 +11,13 @@ export const environment = {
   supportedLanguages: [
     'en-US',
     'fr-FR'
-  ]
+  ],
+  firebase: {
+    apiKey: 'AIzaSyCzy5B2_jDI7IuYEtrMH00_zkKFoDTu2-k',
+    authDomain: '<your-project-authdomain>',
+    databaseURL: 'https://ptos-e178e.firebaseio.com/',
+    projectId: 'ptos-e178e',
+    storageBucket: '<your-storage-bucket>',
+    messagingSenderId: '<your-messaging-sender-id>'
+  }
 };
