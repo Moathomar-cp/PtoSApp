@@ -36,7 +36,7 @@ import { ProvidersModule } from './providers/providers.module';
     HttpClientModule,
     NgxDatatableModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule.enablePersistence(),, // imports firebase/firestore, only needed for database features
+    AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule,
     TranslateModule.forRoot(),
