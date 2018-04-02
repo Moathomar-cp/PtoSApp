@@ -13,7 +13,7 @@
         <option value="100">100</option>
       </select> entries
     </label>
-    
+
     <!--search -->
     <div class="search">
       <label>Search:
@@ -21,18 +21,23 @@
       </label>
     </div>
   </div>
-<br />
+  <br />
   <!-- Categories table -->
   <table class="table table-striped table-bordered" id="myTable">
     <thead>
       <tr>
         <th>Category Name</th>
-        <th>Created At</th>   
+        <th>Created At</th>
         <th>Action</th>
       </tr>
 
     </thead>
     <tbody>
-     
+
+      <tr *ngFor="let item of categoriesItems">
+        <td>{{item.name}}</td>
+        
+      </tr>
     </tbody>
   </table>
+  <button class="btn btn-add btn-lg" type="button" >Add Category</button>
