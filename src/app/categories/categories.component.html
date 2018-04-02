@@ -37,6 +37,12 @@
       <tr *ngFor="let item of categoriesItems">
         <td>{{item.name}}</td>
         <td>{{item.createdAt}}</td>
+        <td>
+          <div class="action">
+            <a class="btn btn-sm btn-default" href="#" title="Delete" data-toggle="tooltip">
+              <i class="fa fa-times"></i>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>
