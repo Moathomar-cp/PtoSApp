@@ -14,21 +14,17 @@ export class CategoriesComponent implements OnInit {
   constructor(private spinnerService: Ng4LoadingSpinnerService) { }
 
   ngOnInit() {
-    //show spinner loading 
-    this.spinnerService.show();
-    setTimeout(() => {
-      this.newMethod();
-      //hide spinner loading 
-      this.spinnerService.hide();
-    }, 2000);
-  }
-
-  private newMethod() {
     this.getCategoriesList();
+
   }
 
   getCategoriesList() {
-    this.categoriesItems = CATEGORIES;
+    this.spinnerService.show();
+
+    setTimeout(() => {
+      this.categoriesItems = CATEGORIES;
+      this.spinnerService.hide();
+    }, 1000);
   }
 
 }
