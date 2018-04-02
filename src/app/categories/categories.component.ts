@@ -16,7 +16,9 @@ export class CategoriesComponent implements OnInit {
   ngOnInit() {
     //show spinner loading 
     this.spinnerService.show();
-    
+    setTimeout(() => {
+      this.newMethod();
+    }, 2000);
   }
 
   private newMethod() {
