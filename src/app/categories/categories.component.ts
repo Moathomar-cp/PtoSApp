@@ -13,5 +13,15 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit() {
 
+    this.getCategoriesList();
   }
+
+  private newMethod() {
+    this.getCategoriesList();
+  }
+
+  getCategoriesList() {
+    this.categoriesItems = CATEGORIES;
+  }
+
 }
