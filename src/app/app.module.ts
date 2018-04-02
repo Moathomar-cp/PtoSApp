@@ -15,18 +15,31 @@ import { AboutModule } from './about/about.module';
 import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SalesModule } from './sales/sales.module';
 import { ProductsModule } from '@app/products/products.module';
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
+import { ExpensesListModule } from './expenses-list/expenses-list.module';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { MatDialogModule } from '@angular/material';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { ProvidersModule } from './providers/providers.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+
     FormsModule,
     HttpClientModule,
     NgxDatatableModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence(),, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule,
     TranslateModule.forRoot(),
     BrowserAnimationsModule,
     MaterialModule,
@@ -35,11 +48,14 @@ import { MatDialogModule } from '@angular/material';
     HomeModule,
     AboutModule,
     LoginModule,
-    ProductsModule,
+    SalesModule,
+    ExpensesListModule,
     Ng4LoadingSpinnerModule.forRoot(),
+    ProductsModule,
     AppRoutingModule,
+    ProvidersModule,
   ],
-  exports:[
+  exports: [
     NgxDatatableModule
   ],
   declarations: [AppComponent],
