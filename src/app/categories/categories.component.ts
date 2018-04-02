@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriesListItem } from './model';
 import { CATEGORIES } from './mock-data';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
