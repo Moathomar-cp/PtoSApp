@@ -1,0 +1,23 @@
+<div class="mat-container">
+  <h1 mat-dialog-title>Add Product
+    <button class="close">X</button>
+  </h1>
+
+  <mat-dialog-content>
+    <form>
+
+      <div class="form-group">
+        <label for="Category Name">Category Name</label>
+        <input type="text" class="form-control" maxlength="20" id="catId" placeholder="Category Name">
+      </div>
+
+    </form>
+  </mat-dialog-content>
+
+
+  <mat-dialog-actions class="mat-actions">
+    <button type="submit" class="btn  submit-btn">Submit</button>
+    <button mat-button [mat-dialog-close]="true" class="btn  close-btn">Close</button>
+  </mat-dialog-actions>
+
+</div>
