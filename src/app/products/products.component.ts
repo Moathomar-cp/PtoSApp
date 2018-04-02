@@ -12,10 +12,7 @@ import { CategoriesProvider } from '@app/providers/categories';
 export class ProductsComponent implements OnInit {
 
   products: Product[];
-  get categories() {
-    return this.categrorieSrvc.getList()
-  }
-  constructor(private spinnerService: Ng4LoadingSpinnerService, private categrorieSrvc: CategoriesProvider) { }
+  constructor(private spinnerService: Ng4LoadingSpinnerService) { }
 
   ngOnInit() {
 
@@ -25,6 +22,7 @@ export class ProductsComponent implements OnInit {
       this.spinnerService.hide();
     }, 1000);
   }
+
   getData() {
     this.products = PRODUCTS;
   }

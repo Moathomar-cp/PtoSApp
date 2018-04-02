@@ -20,18 +20,13 @@
       <option value="2">supplier2</option>
       <option value="3">supplier3</option>
     </select>
-    <!--
+
     <label class="lable">Product type</label>
     <select class="form-control product-type">
       <option value="10">All</option>
       <option value="25">Standard</option>
       <option value="50">Service</option>
       <option value="100">Combination</option>
-    </select> -->
-
-    <label class="lable"> cats type</label>
-    <select class="form-control product-type">
-      <option [value]="i" *ngFor="let cat of categories|async;let i = index">{{cat.name}}</option>
     </select>
 
     <button class="btn btn-default">Apply fillter</button>
