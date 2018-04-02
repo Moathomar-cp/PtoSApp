@@ -10,7 +10,7 @@ import { ViewEncapsulation } from '@angular/core';
 })
 export class CategoryFormComponent implements OnInit {
 
-  constructor(private dialogRef: MatDialogRef<CategoryFormComponent>) { }
+  constructor(private dialogRef2: MatDialogRef<CategoryFormComponent>) { }
 
   ngOnInit() {
   }

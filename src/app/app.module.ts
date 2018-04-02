@@ -21,6 +21,8 @@ import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { ExpensesListModule } from './expenses-list/expenses-list.module';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { MatDialogModule } from '@angular/material';
+import { CategoryFormModule } from './category-form/category-form.module'
+import { ProductDialogModule } from './product-dialog/product-dialog.module';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -32,12 +34,11 @@ import { ProvidersModule } from './providers/providers.module';
   imports: [
     BrowserModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-
     FormsModule,
     HttpClientModule,
     NgxDatatableModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule.enablePersistence(),, // imports firebase/firestore, only needed for database features
+    AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule,
     TranslateModule.forRoot(),
@@ -52,8 +53,9 @@ import { ProvidersModule } from './providers/providers.module';
     ExpensesListModule,
     Ng4LoadingSpinnerModule.forRoot(),
     ProductsModule,
-    AppRoutingModule,
+    CategoryFormModule,
     ProvidersModule,
+    AppRoutingModule
   ],
   exports: [
     NgxDatatableModule
