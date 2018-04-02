@@ -26,6 +26,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ProvidersModule } from './providers/providers.module';
+import { CategoriesModule } from './categories/categories.module';
 
 @NgModule({
   imports: [
@@ -36,7 +37,7 @@ import { ProvidersModule } from './providers/providers.module';
     HttpClientModule,
     NgxDatatableModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule.enablePersistence(),, // imports firebase/firestore, only needed for database features
+    AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule,
     TranslateModule.forRoot(),
@@ -51,8 +52,10 @@ import { ProvidersModule } from './providers/providers.module';
     ExpensesListModule,
     Ng4LoadingSpinnerModule.forRoot(),
     ProductsModule,
-    AppRoutingModule,
     ProvidersModule,
+    CategoriesModule,
+     AppRoutingModule,
+
   ],
   exports: [
     NgxDatatableModule
