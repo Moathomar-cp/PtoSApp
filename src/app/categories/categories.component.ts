@@ -18,6 +18,8 @@ export class CategoriesComponent implements OnInit {
     this.spinnerService.show();
     setTimeout(() => {
       this.newMethod();
+      //hide spinner loading 
+      this.spinnerService.hide();
     }, 2000);
   }
 
