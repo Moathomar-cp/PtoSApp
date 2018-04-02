@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SalesListItem } from '../model';
-import { SALESITEMS } from '../mock-data';
+import { SalesListItem } from './model';
+import { SALESITEMS } from './mock-data';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
 
 //declare var hi:any;
 
@@ -10,12 +12,14 @@ import { SALESITEMS } from '../mock-data';
   styleUrls: ['./sales.component.scss']
 })
 export class SalesComponent implements OnInit {
+  items: Observable<any[]>;
 
   isLoadingItems = false;
 
   salesItems: SalesListItem[] = [];
-  constructor() {
-  }
+  constructor(  db: AngularFirestore ) {
+    this.items = db.collection('items').valueChanges();
+   }
 
   ngOnInit() {
     this.getSalesList();

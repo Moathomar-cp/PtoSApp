@@ -3,6 +3,12 @@
   <h3>Sales</h3>
   <br />
   <br />
+  <ul>
+    <li class="text" *ngFor="let item of items | async">
+      {{item.name}}
+    </li>
+  </ul>
+  
   <!-- show -->
   <div class="show">
     <label>Show

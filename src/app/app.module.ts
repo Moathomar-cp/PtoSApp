@@ -6,7 +6,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateModule } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-
 import { environment } from '@env/environment';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
@@ -22,6 +21,11 @@ import { ExpensesListModule } from './expenses-list/expenses-list.module';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { ExpenseFormComponent } from './expense-form/expense-form.component';
 import { MatDialogModule } from '@angular/material';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { ProductCategoriesComponent } from './product-categories/product-categories.component';
 
 
 @NgModule({
@@ -45,12 +49,16 @@ import { MatDialogModule } from '@angular/material';
     Ng4LoadingSpinnerModule.forRoot(),
     ProductsModule,
     MatDialogModule,
+    AngularFireModule.initializeApp(environment.firebase,'testDB'),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule ,
     AppRoutingModule,
   ],
   exports: [
     NgxDatatableModule
   ],
-  declarations: [AppComponent, ExpenseFormComponent],
+  declarations: [AppComponent, ExpenseFormComponent, ProductCategoriesComponent],
   providers: [
   ],
   entryComponents: [ExpenseFormComponent] ,

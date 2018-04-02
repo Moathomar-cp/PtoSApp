@@ -17,11 +17,6 @@ export class ExpensesListComponent implements OnInit {
 
   fileNameDialogRef: MatDialogRef<ExpenseFormComponent>;
 
-  openAddExpenseDialog() {
-    this.fileNameDialogRef = this.dialog.open(ExpenseFormComponent, {
-      height:'90%', width: '600px' ,
-      });   
-  }
 
   expensesList: ExpensesListItem[];
   numOpts: number[] = [10, 20, 30];
@@ -34,6 +29,12 @@ export class ExpensesListComponent implements OnInit {
     this.getData();
   }
 
+  
+  openAddExpenseDialog() {
+    this.fileNameDialogRef = this.dialog.open(ExpenseFormComponent, {
+      height:'90%', width: '600px' ,
+      });   
+  }
   getData() {
     this.spinnerService.show();
     setTimeout(() => {
