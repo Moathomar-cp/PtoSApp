@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SalesListItem } from '../model';
-import { SALESITEMS } from '../mock-data';
+import { SalesListItem } from './model';
+import { SALESITEMS } from './mock-data';
 
 //declare var hi:any;
 
