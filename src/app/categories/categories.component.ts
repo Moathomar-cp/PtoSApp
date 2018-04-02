@@ -11,7 +11,7 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 export class CategoriesComponent implements OnInit {
   categoriesItems: CategoriesListItem[] = [];
 
-  constructor() { }
+  constructor(private spinnerService: Ng4LoadingSpinnerService) { }
 
   ngOnInit() {
 
