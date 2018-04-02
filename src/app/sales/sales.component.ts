@@ -18,24 +18,19 @@ export class SalesComponent implements OnInit {
   }
 
   ngOnInit() {
-    //show spinner
+    this.getSalesList();
+  }
+
+  getSalesList() {
     this.spinner.show();
     setTimeout(() => {
-      //getData
-      this.newMethod();
-      //hide spinner
+      this.salesItems = SALESITEMS;
       this.spinner.hide();
     }, 1000);
   }
 
-  getSalesList() {
-  this.salesItems = SALESITEMS;
-  }
 
-  private newMethod() {
-    this.getSalesList();
-  }
 
-  
+
 
 }
