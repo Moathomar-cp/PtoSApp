@@ -3,6 +3,7 @@ import { CategoriesListItem } from './model';
 import { CATEGORIES } from './mock-data';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { AngularFirestore ,AngularFirestoreCollection} from 'angularfire2/firestore';
+import{Category} from './category';
 
 @Component({
   selector: 'app-categories',
