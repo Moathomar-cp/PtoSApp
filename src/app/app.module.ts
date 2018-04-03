@@ -29,6 +29,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ProvidersModule } from './providers/providers.module';
+import { CategoriesModule } from './categories/categories.module';
 
 @NgModule({
   imports: [
@@ -55,7 +56,10 @@ import { ProvidersModule } from './providers/providers.module';
     ProductsModule,
     CategoryFormModule,
     ProvidersModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CategoriesModule,
+     AppRoutingModule,
+
   ],
   exports: [
     NgxDatatableModule
