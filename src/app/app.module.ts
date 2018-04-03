@@ -56,9 +56,8 @@ import { CategoriesModule } from './categories/categories.module';
     ProductsModule,
     CategoryFormModule,
     ProvidersModule,
-    AppRoutingModule,
     CategoriesModule,
-     AppRoutingModule,
+    AppRoutingModule
 
   ],
   exports: [

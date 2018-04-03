@@ -1,12 +1,12 @@
-export class Details {
-    type:string;
+export class ProuctFormModel {
+    typeId:string;
     code: number;
     name: string;
-    category: string;
-    supplier:string;
+    categoryId: string;
+    supplierId:string;
     purchasePrice :string;
     tax: string;
-    taxMethod: string;
+    taxMethodId: string;
     price: number;
     productUnit:string;
     alertQuantity:number;

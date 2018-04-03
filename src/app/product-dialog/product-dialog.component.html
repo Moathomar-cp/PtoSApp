@@ -8,7 +8,7 @@
 
       <div class="form-group">
         <label for="type">Type</label>
-        <select class="form-control" [(ngModel)]="object.type" id="typeId">
+        <select class="form-control" [(ngModel)]="formModel.typeId" id="typeId">
           <option [value]="type" *ngFor="let type of types">{{type}}</option>
         </select>
       </div>
@@ -16,13 +16,13 @@
 
       <div class="form-group">
         <label for="code">Code</label>
-        <input type="text" class="form-control" [(ngModel)]="object.code" [ngModelOptions]="{standalone: true}" maxlength="20" id="codeId"
+        <input type="text" class="form-control" [(ngModel)]="formModel.code" [ngModelOptions]="{standalone: true}" maxlength="20" id="codeId"
           placeholder="Code">
       </div>
 
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" [(ngModel)]="object.name" [ngModelOptions]="{standalone: true}" id="nameId" placeholder="name"
+        <input type="text" class="form-control" [(ngModel)]="formModel.name" [ngModelOptions]="{standalone: true}" id="nameId" placeholder="name"
           required>
       </div>
 
@@ -30,7 +30,7 @@
 
       <div class="form-group">
         <label for="category">Category</label>
-        <select class="form-control" [(ngModel)]="object.category" id="categoryId">
+        <select class="form-control" [(ngModel)]="formModel.categoryId" id="categoryId">
           <option *ngFor="let cat of categories">{{cat}}</option>
         </select>
       </div>
@@ -39,7 +39,7 @@
 
       <div class="form-group">
         <label for="Supplier">Supplier</label>
-        <select class="form-control" [(ngModel)]="object.supplier" id="supplierId">
+        <select class="form-control" [(ngModel)]="formModel.supplierId" id="supplierId">
           <option *ngFor="let supplier of suppliers">{{supplier}}</option>
         </select>
       </div>
@@ -47,20 +47,20 @@
 
       <div class="form-group">
         <label for="Purchase Price">Purchase Price (EUR)</label>
-        <input type="number" step="any" [(ngModel)]="object.purchasePrice" [ngModelOptions]="{standalone: true}" min="0" class="form-control"
+        <input type="number" step="any" [(ngModel)]="formModel.purchasePrice" [ngModelOptions]="{standalone: true}" min="0" class="form-control"
           id="purchaseId" placeholder="Purchase Price">
       </div>
 
 
       <div class="form-group">
         <label for="tax">Tax(%)</label>
-        <input type="text" [(ngModel)]="object.tax" [ngModelOptions]="{standalone: true}" class="form-control" id="taxId" placeholder="tax(%)">
+        <input type="text" [(ngModel)]="formModel.tax" [ngModelOptions]="{standalone: true}" class="form-control" id="taxId" placeholder="tax(%)">
       </div>
 
 
       <div class="form-group">
         <label for="Tax Method">Tax Method</label>
-        <select class="form-control" id="methodId">
+        <select class="form-control" [(ngModel)]="formModel.taxMethodId" id="methodId">
           <option *ngFor="let taxM of taxMethod">{{taxM}}</option>
         </select>
       </div>
@@ -68,21 +68,21 @@
 
       <div class="form-group">
         <label for="Price">Price(EUR)</label>
-        <input type="number" step="any" [(ngModel)]="object.price" [ngModelOptions]="{standalone: true}" min="0" class="form-control"
+        <input type="number" step="any" [(ngModel)]="formModel.price" [ngModelOptions]="{standalone: true}" min="0" class="form-control"
           id="priceId" placeholder="Price">
       </div>
 
 
       <div class="form-group">
         <label for="Product Unit">Product Unit</label>
-        <input type="text" class="form-control" [(ngModel)]="object.productUnit" [ngModelOptions]="{standalone: true}" id="pUnitId"
+        <input type="text" class="form-control" [(ngModel)]="formModel.productUnit" [ngModelOptions]="{standalone: true}" id="pUnitId"
           placeholder="Product Unit">
       </div>
 
 
       <div class="form-group">
         <label for="alertQty">Alert Quantity</label>
-        <input type="number" step="any" [(ngModel)]="object.alertQuantity" [ngModelOptions]="{standalone: true}" min="0" class="form-control"
+        <input type="number" step="any" [(ngModel)]="formModel.alertQuantity" [ngModelOptions]="{standalone: true}" min="0" class="form-control"
           id="alertQtyId" placeholder="Alert Quantity">
       </div>
 
@@ -94,7 +94,7 @@
 
       <div class="form-group">
         <label for="Textarea">Product Description</label>
-        <textarea class="form-control" [(ngModel)]="object.description" [ngModelOptions]="{standalone: true}" id="descriptionId"
+        <textarea class="form-control" [(ngModel)]="formModel.description" [ngModelOptions]="{standalone: true}" id="descriptionId"
           rows="4"></textarea>
       </div>
 
