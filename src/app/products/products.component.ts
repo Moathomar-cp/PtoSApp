@@ -3,6 +3,7 @@ import { Product } from './product';
 import { PRODUCTS } from './mock-products';
 import { TYPES, ENTRIES, SUPPLIERS, PROPERTIES } from './data-arrays';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import { CategoriesProvider } from '@app/providers/categories';
 
 @Component({
   selector: 'app-products',
@@ -30,7 +31,6 @@ export class ProductsComponent implements OnInit {
       this.spinnerService.hide();
     }, 1000);
   }
-
 
   getData() {
     this.products = PRODUCTS;
