@@ -15,8 +15,8 @@ import { CategoryFormComponent } from '../category-form/category-form.component'
 export class ProductsComponent implements OnInit {
   searchText: string;
   products: Product[];
-  dialogRef: MatDialogRef<ProductDialogComponent>;
-  dialogRef2: MatDialogRef<CategoryFormComponent>;
+  productDialogRef: MatDialogRef<ProductDialogComponent>;
+  categoryDialogRef: MatDialogRef<CategoryFormComponent>;
 
 
   constructor(private spinnerService: Ng4LoadingSpinnerService, public dialog: MatDialog) { }
@@ -35,11 +35,11 @@ export class ProductsComponent implements OnInit {
     this.products = PRODUCTS;
   }
 
-  openDialog() {
+  openProductFormModal() {
     /*  this.dialogRef = this.dialog.open(ProductDialogComponent, {
        hasBackdrop: false}); */
 
-    this.dialogRef = this.dialog.open(ProductDialogComponent, {
+    this.productDialogRef = this.dialog.open(ProductDialogComponent, {
       width: '600px',
       height: '700px',
 
@@ -48,8 +48,8 @@ export class ProductsComponent implements OnInit {
   }
 
 
-  openDialog2() {
-    this.dialogRef2 = this.dialog.open(CategoryFormComponent, {
+  openCategoryFormModal() {
+    this.categoryDialogRef = this.dialog.open(CategoryFormComponent, {
       width: '600px',
       height: '300px',
 
