@@ -16,7 +16,7 @@ export class CategoriesComponent implements OnInit {
   category$: Observable<Category[]>;
 
   constructor(private spinnerService: Ng4LoadingSpinnerService,private afs: AngularFirestore) {
-
+    this.getCategoryList(afs);
    }
 
   ngOnInit() {}
