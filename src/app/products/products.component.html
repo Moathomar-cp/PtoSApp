@@ -2,7 +2,7 @@
 <div id="entries" class="container selectors">
   <label class="lable">Show</label>
   <select class="form-control">
-      <option *ngFor="let entry of entries" [value]="entry.id">{{entry.value}}</option>
+    <option *ngFor="let entry of entries" [value]="entry.id">{{entry.value}}</option>
 
   </select>
   <label class="lable">entries</label>
@@ -27,9 +27,6 @@
 
   <div>
     <button class="btn add-btn" (click)="openProductFormModal()">Add Product</button>
-    <div>
-      <button class="btn add-btn" (click)="openCategoryFormModal()">Add Categroy</button>
-    </div>
   </div>
   <!-- End of Fillter -->
 
@@ -88,5 +85,3 @@
     </table>
   </div>
   <!-- End of Products table -->
-
-
