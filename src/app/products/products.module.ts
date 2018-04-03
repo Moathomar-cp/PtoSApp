@@ -12,7 +12,6 @@ import {FilterPipe} from './filter.pipe'
   imports: [
     CommonModule,
     FormsModule,
-    ProductsRoutingModule,
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
