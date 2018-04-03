@@ -13,11 +13,11 @@ export const environment = {
     'fr-FR'
   ],
   firebase: {
-    apiKey: 'AIzaSyCzy5B2_jDI7IuYEtrMH00_zkKFoDTu2-k',
-    authDomain: 'ptos-e178e.firebaseapp.com',
-    databaseURL: 'https://ptos-e178e.firebaseio.com/',
-    projectId: 'ptos-e178e',
-    storageBucket: 'ptos-e178e.appspot.com',
-    messagingSenderId: '714481396961'
+    apiKey: 'AIzaSyBpWwnrCwVnfbb50fCMRu531KUzppEoa1k ',
+    authDomain: 'angularfirebase2-fa131.firebaseapp.com ',
+    databaseURL: 'https://angularfirebase2-fa131.firebaseio.com/',
+    projectId: 'angularfirebase2-fa131',
+    storageBucket: 'gs://angularfirebase2-fa131.appspot.com',
+    messagingSenderId: '38010947027'
   }
 };
