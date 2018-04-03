@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SalesListItem } from './model';
 import { SALESITEMS } from './mock-data';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 //declare var hi:any;
 
@@ -11,27 +12,25 @@ import { SALESITEMS } from './mock-data';
 })
 export class SalesComponent implements OnInit {
 
-  isLoadingItems = false;
 
   salesItems: SalesListItem[] = [];
-  constructor() {
+  constructor(private spinner: Ng4LoadingSpinnerService) {
   }
 
   ngOnInit() {
     this.getSalesList();
   }
 
-  private newMethod() {
-    this.getSalesList();
-  }
-
   getSalesList() {
-
-    this.isLoadingItems = true;
+    this.spinner.show();
     setTimeout(() => {
       this.salesItems = SALESITEMS;
-      this.isLoadingItems = false;
-    }, 2000);
+      this.spinner.hide();
+    }, 1000);
   }
+
+
+
+
 
 }
