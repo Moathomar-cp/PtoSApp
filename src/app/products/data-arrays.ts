@@ -1,4 +1,4 @@
-
+/* Will be changed after using FS DB */
 export let TYPES :{ id: number, name: string }[]=[
     { id: 1, name: 'All' },
     { id: 2, name: 'Standard' },
