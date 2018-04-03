@@ -7,12 +7,12 @@ import { MatDialogModule } from '@angular/material';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ProductDialogComponent } from '../product-dialog/product-dialog.component';
 import { MatFormFieldModule,MatInputModule ,MatFormFieldControl} from '@angular/material';
-
+import {FilterPipe} from './filter.pipe'
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
