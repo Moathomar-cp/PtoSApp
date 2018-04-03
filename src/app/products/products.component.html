@@ -25,16 +25,21 @@
   </div>
   <!-- End of Filter -->
 
-
   <div>
-    <button class="btn add-btn">Add Product</button>
+    <button class="btn add-btn" (click)="openProductFormModal()">Add Product</button>
+    <div>
+      <button class="btn add-btn" (click)="openCategoryFormModal()">Add Categroy</button>
+    </div>
   </div>
+  <!-- End of Fillter -->
+
+
 
 
   <!-- Search section -->
   <div class="search">
     <label>Search:</label>
-    <input [(ngModel)]="searchText" placeholder="">
+    <input [(ngModel)]="searchText" placeholder="search products">
   </div>
   <!-- End of Search -->
 
@@ -83,3 +88,5 @@
     </table>
   </div>
   <!-- End of Products table -->
+
+
