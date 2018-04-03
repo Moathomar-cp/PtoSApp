@@ -2,7 +2,7 @@
 <div id="entries" class="container selectors">
   <label class="lable">Show</label>
   <select class="form-control">
-      <option *ngFor="let entry of entries" [value]=entry.id>{{entry.value}}</option>
+      <option *ngFor="let entry of entries" [value]="entry.id">{{entry.value}}</option>
 
   </select>
   <label class="lable">entries</label>
@@ -13,12 +13,12 @@
   <div class="filter">
     <label class="lable">Supplier</label>
     <select class="form-control supplier">
-      <option *ngFor="let supplier of suppliers" [value]=supplier.id>{{supplier.name}}</option>
+      <option *ngFor="let supplier of suppliers" [value]="supplier.id">{{supplier.name}}</option>
     </select>
 
     <label class="lable">Product type</label>
     <select class="form-control product-type">
-      <option *ngFor="let type of types" [value]=type.id>{{type.name}}</option>
+      <option *ngFor="let type of types" [value]="type.id">{{type.name}}</option>
     </select>
 
     <button class="btn btn-default">Apply filter</button>
