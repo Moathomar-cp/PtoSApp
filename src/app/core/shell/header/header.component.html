@@ -12,7 +12,8 @@
       <span translate>Home</span>
     </button>
     <button mat-button routerLink="/expense" routerLinkActive="active">
-      <span translate><i class="fa fa-usd"></i> Expense</span>
+      <span translate>
+        <i class="fa fa-usd"></i> Expense</span>
     </button>
     <button mat-button routerLink="/about" routerLinkActive="active">
       <mat-icon>info</mat-icon>
@@ -23,10 +24,20 @@
       <span translate><i class="fa fa-ticket"></i>Sales</span>
     </button>
     <button mat-button routerLink="/products" routerLinkActive="active">
-      <mat-icon>list</mat-icon>
+      <mat-icon>products</mat-icon>
       <span translate>products</span>
     </button>
-
+    
+    <div class = "btn-group">
+        <button mat-button type = "button" class = "btn btn-default dropdown-toggle" data-toggle = "dropdown">
+            <i class="fa fa-bookmark" style="font-size:14px;"></i>Categories 
+        </button>
+        <ul class = "dropdown-menu" role = "menu">
+            <li><a routerLink="/categories" routerLinkActive="active">Products</a></li>
+              <li><a routerLink="/categories" routerLinkActive="active">Expenses</a></li>
+        </ul>
+     </div>
+    
   </div>
   <span fxFlex></span>
   <button mat-icon-button [matMenuTriggerFor]="languageMenu">
@@ -34,8 +45,8 @@
   </button>
   <mat-menu #languageMenu="matMenu">
     <button mat-menu-item *ngFor="let language of languages" (click)="setLanguage(language)">
-        {{language}}
-      </button>
+      {{language}}
+    </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="userMenu">
     <mat-icon>person</mat-icon>
@@ -43,7 +54,8 @@
   <mat-menu #userMenu="matMenu">
     <mat-list>
       <mat-list-item>
-        <span translate>Logged in as</span>&nbsp;<b>{{username}}</b>
+        <span translate>Logged in as</span>&nbsp;
+        <b>{{username}}</b>
       </mat-list-item>
       <mat-divider></mat-divider>
     </mat-list>

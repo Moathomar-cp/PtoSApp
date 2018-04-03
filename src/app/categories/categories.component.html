@@ -1,0 +1,54 @@
+<div class="container">
+  <br />
+  <br />
+  <br />
+  
+  <!-- show -->
+  <div class="show">
+    <label>Show
+      <select>
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select> entries
+    </label>
+
+    <!--search -->
+    <div class="search">
+      <label>Search:
+        <input type="text">
+      </label>
+    </div>
+  </div>
+  <button class="btn btn-add btn-lg" type="button" >Add Category</button>
+  <!-- Categories table -->
+  <br />
+  <br />
+  <table class="table table-striped table-bordered" id="myTable">
+    <thead>
+      <tr>
+        <th>Category Name</th>
+        <th>Created At</th>
+        <th>Action</th>
+      </tr>
+
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let item of categoriesItems">
+        <td>{{item.name}}</td>
+        <td>{{item.createdAt}}</td>
+        <td>
+          <div class="action">
+            <a class="btn btn-sm btn-default" href="#" title="Delete" data-toggle="tooltip">
+              <i class="fa fa-times"></i>
+            </a>
+            <a class="btn btn-sm btn-default" href="#" title="Edit" data-toggle="tooltip">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
