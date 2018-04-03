@@ -36,11 +36,11 @@
 }
 
 
-.fillter{
+.filter{
    float: right; 
 }
 
-.fillter button {
+.filter button {
 margin-bottom: 5px;
 background-color: #fff;
 border-color:rgba(208, 209, 214, 0.993);
@@ -62,9 +62,8 @@ border-color:rgba(208, 209, 214, 0.993);
  
   .search input {
    left: right;
-   text-align: right;
+   text-align: left;
   } 
-
 
 
   .action{

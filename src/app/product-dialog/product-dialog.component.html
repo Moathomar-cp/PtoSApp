@@ -1,0 +1,130 @@
+<div class="mat-container">
+  <h1 mat-dialog-title>Add Product
+    <button class="close" [mat-dialog-close]="true">X</button>
+  </h1>
+
+  <mat-dialog-content>
+    <form>
+
+      <div class="form-group">
+        <label for="type">Type</label>
+        <select class="form-control" [(ngModel)]="formModel.typeId" id="typeId">
+          <option [value]="type" *ngFor="let type of types">{{type}}</option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="code">Code</label>
+        <input type="text" class="form-control" [(ngModel)]="formModel.code" [ngModelOptions]="{standalone: true}" maxlength="20" id="codeId"
+          placeholder="Code">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="formModel.name" [ngModelOptions]="{standalone: true}" id="nameId" placeholder="name"
+          required>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select class="form-control" [(ngModel)]="formModel.categoryId" id="categoryId">
+          <option *ngFor="let cat of categories">{{cat}}</option>
+        </select>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="Supplier">Supplier</label>
+        <select class="form-control" [(ngModel)]="formModel.supplierId" id="supplierId">
+          <option *ngFor="let supplier of suppliers">{{supplier}}</option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="Purchase Price">Purchase Price (EUR)</label>
+        <input type="number" step="any" [(ngModel)]="formModel.purchasePrice" [ngModelOptions]="{standalone: true}" min="0" class="form-control"
+          id="purchaseId" placeholder="Purchase Price">
+      </div>
+
+
+      <div class="form-group">
+        <label for="tax">Tax(%)</label>
+        <input type="text" [(ngModel)]="formModel.tax" [ngModelOptions]="{standalone: true}" class="form-control" id="taxId" placeholder="tax(%)">
+      </div>
+
+
+      <div class="form-group">
+        <label for="Tax Method">Tax Method</label>
+        <select class="form-control" [(ngModel)]="formModel.taxMethodId" id="methodId">
+          <option *ngFor="let taxM of taxMethod">{{taxM}}</option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="Price">Price(EUR)</label>
+        <input type="number" step="any" [(ngModel)]="formModel.price" [ngModelOptions]="{standalone: true}" min="0" class="form-control"
+          id="priceId" placeholder="Price">
+      </div>
+
+
+      <div class="form-group">
+        <label for="Product Unit">Product Unit</label>
+        <input type="text" class="form-control" [(ngModel)]="formModel.productUnit" [ngModelOptions]="{standalone: true}" id="pUnitId"
+          placeholder="Product Unit">
+      </div>
+
+
+      <div class="form-group">
+        <label for="alertQty">Alert Quantity</label>
+        <input type="number" step="any" [(ngModel)]="formModel.alertQuantity" [ngModelOptions]="{standalone: true}" min="0" class="form-control"
+          id="alertQtyId" placeholder="Alert Quantity">
+      </div>
+
+      <div class="form-group">
+        <label for="FormControlFile1">Input Image</label>
+        <input type="file" class="form-control-file" id="imgInputId">
+      </div>
+
+
+      <div class="form-group">
+        <label for="Textarea">Product Description</label>
+        <textarea class="form-control" [(ngModel)]="formModel.description" [ngModelOptions]="{standalone: true}" id="descriptionId"
+          rows="4"></textarea>
+      </div>
+
+      <div class="color-btns">
+        <p>Choose color to Display in POS.</p>
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn  color1">
+            <input type="radio" name="optradio">C1</label>
+          <label class="btn  color2">
+            <input type="radio" name="optradio">C2</label>
+          <label class="btn  color3">
+            <input type="radio" name="optradio">C3</label>
+          <label class="btn  color4">
+            <input type="radio" name="optradio">C4</label>
+          <label class="btn  color5">
+            <input type="radio" name="optradio">C5</label>
+          <label class="btn  color6">
+            <input type="radio" name="optradio">C6</label>
+          <label class="btn  color7">
+            <input type="radio" name="optradio">C7 </label>
+        </div>
+      </div>
+
+    </form>
+  </mat-dialog-content>
+
+
+  <mat-dialog-actions class="mat-actions">
+    <button type="submit" (click)="setData()" class="btn  submit-btn">Submit</button>
+    <button mat-button [mat-dialog-close]="true" class="btn  close-btn">Close</button>
+  </mat-dialog-actions>
+
+</div>

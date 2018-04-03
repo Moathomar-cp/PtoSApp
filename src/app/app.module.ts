@@ -20,6 +20,9 @@ import { ProductsModule } from '@app/products/products.module';
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { ExpensesListModule } from './expenses-list/expenses-list.module';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { MatDialogModule } from '@angular/material';
+import { CategoryFormModule } from './category-form/category-form.module'
+import { ProductDialogModule } from './product-dialog/product-dialog.module';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -32,7 +35,6 @@ import { CategoriesModule } from './categories/categories.module';
   imports: [
     BrowserModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-
     FormsModule,
     HttpClientModule,
     NgxDatatableModule,
@@ -52,9 +54,10 @@ import { CategoriesModule } from './categories/categories.module';
     ExpensesListModule,
     Ng4LoadingSpinnerModule.forRoot(),
     ProductsModule,
+    CategoryFormModule,
     ProvidersModule,
     CategoriesModule,
-     AppRoutingModule,
+    AppRoutingModule
 
   ],
   exports: [

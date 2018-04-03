@@ -11,8 +11,8 @@
   <!-- End of Entries -->
 
 
-  <!-- Fillter -->
-  <div class="fillter">
+  <!-- Filter -->
+  <div class="filter">
     <label class="lable">Supplier</label>
     <select class="form-control supplier">
       <option value="0">All</option>
@@ -29,18 +29,24 @@
       <option value="100">Combination</option>
     </select>
 
-    <button class="btn btn-default">Apply fillter</button>
+    <button class="btn btn-default">Apply filter</button>
+  </div>
+  <!-- End of Filter -->
+
+  <div>
+    <button class="btn add-btn" (click)="openProductFormModal()">Add Product</button>
+    <div>
+      <button class="btn add-btn" (click)="openCategoryFormModal()">Add Categroy</button>
+    </div>
   </div>
   <!-- End of Fillter -->
 
-  <div>
-    <button class="btn add-btn">Add Product</button>
-  </div>
+
 
   <!-- Search section -->
   <div class="search">
     <label>Search:</label>
-    <input type="text">
+    <input [(ngModel)]="searchText" placeholder="search products">
   </div>
   <!-- End of Search -->
 
@@ -61,7 +67,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let product of products">
+        <tr *ngFor="let product of products | filter : searchText">
           <td>{{product.code}}</td>
           <td>{{product.name}}</td>
           <td>{{product.category}}</td>
@@ -95,3 +101,5 @@
     </table>
   </div>
   <!-- End of Products table -->
+
+
