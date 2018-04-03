@@ -12,25 +12,15 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
-  categoriesItems: CategoriesListItem[] = [];
   categoryCollectionRef: AngularFirestoreCollection<Category>;
   category$: Observable<Category[]>;
 
 
-  constructor(private spinnerService: Ng4LoadingSpinnerService,private afs: AngularFirestore) { }
+  constructor(private spinnerService: Ng4LoadingSpinnerService,private afs: AngularFirestore) {
+    this.categoryCollectionRef = this.afs.collection<Category>('categories');
+    this.category$ = this.categoryCollectionRef.valueChanges();
+   }
 
-  ngOnInit() {
-    this.getCategoriesList();
-
-  }
-
-  getCategoriesList() {
-    this.spinnerService.show();
-
-    setTimeout(() => {
-      this.categoriesItems = CATEGORIES;
-      this.spinnerService.hide();
-    }, 1000);
-  }
+  ngOnInit() {}
 
 }
