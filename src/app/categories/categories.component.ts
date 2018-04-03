@@ -4,6 +4,7 @@ import { CATEGORIES } from './mock-data';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { AngularFirestore ,AngularFirestoreCollection} from 'angularfire2/firestore';
 import{Category} from './category';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-categories',
@@ -13,6 +14,7 @@ import{Category} from './category';
 export class CategoriesComponent implements OnInit {
   categoriesItems: CategoriesListItem[] = [];
   categoryCollectionRef: AngularFirestoreCollection<Category>;
+  category$: Observable<Category[]>;
 
 
   constructor(private spinnerService: Ng4LoadingSpinnerService,private afs: AngularFirestore) { }
