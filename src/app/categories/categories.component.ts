@@ -13,7 +13,7 @@ import{Category} from './category';
 export class CategoriesComponent implements OnInit {
   categoriesItems: CategoriesListItem[] = [];
 
-  constructor(private spinnerService: Ng4LoadingSpinnerService) { }
+  constructor(private spinnerService: Ng4LoadingSpinnerService,private afs: AngularFirestore) { }
 
   ngOnInit() {
     this.getCategoriesList();
