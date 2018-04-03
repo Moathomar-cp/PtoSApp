@@ -12,6 +12,8 @@ import{Category} from './category';
 })
 export class CategoriesComponent implements OnInit {
   categoriesItems: CategoriesListItem[] = [];
+  categoryCollectionRef: AngularFirestoreCollection<Category>;
+
 
   constructor(private spinnerService: Ng4LoadingSpinnerService,private afs: AngularFirestore) { }
 
