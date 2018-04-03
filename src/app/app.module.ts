@@ -20,6 +20,7 @@ import { ProductsModule } from '@app/products/products.module';
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { ExpensesListModule } from './expenses-list/expenses-list.module';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { MatDialogModule } from '@angular/material';
 
 @NgModule({
   imports: [
