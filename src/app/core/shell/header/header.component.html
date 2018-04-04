@@ -12,7 +12,8 @@
       <span translate>Home</span>
     </button>
     <button mat-button routerLink="/expense" routerLinkActive="active">
-      <span translate><i class="fa fa-usd"></i> Expense</span>
+      <span translate>
+        <i class="fa fa-usd"></i> Expense</span>
     </button>
     <button mat-button routerLink="/about" routerLinkActive="active">
       <mat-icon>info</mat-icon>
@@ -20,14 +21,12 @@
     </button>
     <button mat-button routerLink="/sales" routerLinkActive="active">
       <mat-icon>sales</mat-icon>
-      <span translate>Sales</span>
+      <span translate><i class="fa fa-ticket"></i>Sales</span>
     </button>
     <button mat-button routerLink="/products" routerLinkActive="active">
-      <mat-icon>list</mat-icon>
+      <mat-icon>products</mat-icon>
       <span translate>products</span>
     </button>
-    
-
   </div>
   <span fxFlex></span>
   <button mat-icon-button [matMenuTriggerFor]="languageMenu">
@@ -35,8 +34,8 @@
   </button>
   <mat-menu #languageMenu="matMenu">
     <button mat-menu-item *ngFor="let language of languages" (click)="setLanguage(language)">
-        {{language}}
-      </button>
+      {{language}}
+    </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="userMenu">
     <mat-icon>person</mat-icon>
@@ -44,10 +43,10 @@
   <mat-menu #userMenu="matMenu">
     <mat-list>
       <mat-list-item>
-        <span translate>Logged in as</span>&nbsp;<b>{{username}}</b>
+        <span translate>Logged in as</span>&nbsp;
+        <b>{{username}}</b>
       </mat-list-item>
       <mat-divider></mat-divider>
     </mat-list>
-    <button mat-menu-item (click)="logout()" translate>Logout</button>
   </mat-menu>
 </mat-toolbar>

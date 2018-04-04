@@ -3,6 +3,7 @@ import { SalesListItem } from './model';
 import { SALESITEMS } from './mock-data';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 //declare var hi:any;
 
@@ -14,10 +15,9 @@ import { Observable } from 'rxjs/Observable';
 export class SalesComponent implements OnInit {
   items: Observable<any[]>;
 
-  isLoadingItems = false;
 
   salesItems: SalesListItem[] = [];
-  constructor(  db: AngularFirestore ) {
+  constructor(  db: AngularFirestore , private spinner: Ng4LoadingSpinnerService ) {
     this.items = db.collection('items').valueChanges();
    }
 
@@ -25,17 +25,16 @@ export class SalesComponent implements OnInit {
     this.getSalesList();
   }
 
-  private newMethod() {
-    this.getSalesList();
-  }
-
   getSalesList() {
-
-    this.isLoadingItems = true;
+    this.spinner.show();
     setTimeout(() => {
       this.salesItems = SALESITEMS;
-      this.isLoadingItems = false;
-    }, 2000);
+      this.spinner.hide();
+    }, 1000);
   }
+
+
+
+
 
 }

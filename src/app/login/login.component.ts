@@ -14,7 +14,7 @@ const log = new Logger('Login');
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  
   version: string = environment.version;
   error: string;
   loginForm: FormGroup;

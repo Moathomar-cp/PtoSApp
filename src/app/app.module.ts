@@ -21,12 +21,17 @@ import { ExpensesListModule } from './expenses-list/expenses-list.module';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { ExpenseFormComponent } from './expense-form/expense-form.component';
 import { MatDialogModule } from '@angular/material';
+import { CategoryFormModule } from './category-form/category-form.module'
+import { ProductDialogModule } from './product-dialog/product-dialog.module';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ProductCategoriesComponent } from './product-categories/product-categories.component';
 
+import { ProvidersModule } from './providers/providers.module';
+import { CategoriesModule } from './categories/categories.module';
 
 @NgModule({
   imports: [
@@ -36,6 +41,10 @@ import { ProductCategoriesComponent } from './product-categories/product-categor
     FormsModule,
     HttpClientModule,
     NgxDatatableModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule,
     TranslateModule.forRoot(),
     BrowserAnimationsModule,
     MaterialModule,
@@ -54,6 +63,11 @@ import { ProductCategoriesComponent } from './product-categories/product-categor
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule ,
     AppRoutingModule,
+    CategoryFormModule,
+    ProvidersModule,
+    CategoriesModule,
+    AppRoutingModule
+
   ],
   exports: [
     NgxDatatableModule
