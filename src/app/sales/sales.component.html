@@ -27,12 +27,6 @@
       </label>
     </div>
 
-    <!-- <div id="pid" class="spinner">
-      <ul class="fa-ul spinner">
-        <li class="fa-li fa fa-spinner fa-spin" style="font-size:50px;">
-        </li>
-      </ul>
-    </div> -->
   </div>
 
   <!-- sales table -->
@@ -53,12 +47,9 @@
 
     </thead>
     <tbody>
-      <tr [class.hidden]="!isLoadingItems">
-        <td colspan="9" class="text-center"> <i class="fa fa-spinner fa-spin"></i> loading .... </td>
-      </tr>
-
-      <tr *ngFor="let item of salesItems">
-        <td>{{item.number}}</td>
+      
+        <tr *ngFor="let item of salesItems ">       
+         <td>{{item.number}}</td>
         <td>{{item.custumer}}</td>
         <td>{{item.tax}}</td>
         <td>{{item.discount}}</td>

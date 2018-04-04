@@ -32,9 +32,5 @@ export class SalesComponent implements OnInit {
       this.spinner.hide();
     }, 1000);
   }
-
-
-
-
-
 }
+
