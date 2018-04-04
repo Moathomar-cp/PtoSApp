@@ -4,10 +4,9 @@ import { MatDialogModule } from '@angular/material';
 import { MatDialogRef } from '@angular/material';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ProuctFormModel } from './type.model';
-
+import { ProductsProvider } from '@app/providers/products';
 /* "ViewEncapsulation" used to be able to edit mat-dialog CSS classes 
-specialy : to get rid of the white space in  Material modal dialog
-*/
+specialy : to get rid of  white spaces in  Material modal dialog*/
 import { ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'app-product-dialog',
@@ -41,8 +40,8 @@ export class ProductDialogComponent implements OnInit {
 
 
   taxMethod: string[] = [
-   'inclusive',
-   'exclusive'
+    'inclusive',
+    'exclusive'
   ];
 
   
@@ -62,10 +61,16 @@ export class ProductDialogComponent implements OnInit {
   };
 
 
+  constructor(private dialogRef: MatDialogRef<ProductDialogComponent>, private productieSrvc: ProductsProvider) { }
   ngOnInit() {
 
   }
 
-  setData() {
+
+  addProduct() {
+    this.productieSrvc.add(this.productModel);
+    this.dialogRef.close();
   }
+
+
 }
