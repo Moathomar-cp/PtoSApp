@@ -1,0 +1,53 @@
+.header{
+     background-color:#18293d;
+     margin-top: -25px;
+     padding: 15px;
+     margin-left: -25px;
+     margin-right: -25px;
+     margin-bottom : 5px ;
+     color:#fff ;
+     font-size:14px; 
+     line-height:1.4285;
+}
+button.close {
+    margin-top: -30px;
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+    font-size: 15px;
+}
+.modal-footer{
+    padding:15px;
+    border-top: 1px solid #e5e5e5;
+    text-align:  right;
+
+}
+.modal-footer{
+    padding:15px;
+    border-top: 1px solid #e5e5e5;
+    text-align:  right;
+
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4285;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}

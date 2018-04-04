@@ -11,8 +11,8 @@
         "assets",
         "favicon.ico",
         "manifest.json",
-        "robots.txt"
-      ],
+        "robots.txt" 
+            ],
       "index": "index.html",
       "main": "main.ts",
       "serviceWorker": true,

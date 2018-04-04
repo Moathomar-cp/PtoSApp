@@ -3,6 +3,10 @@ import { ExpensesListItem } from '@app/expenses-list/expenses-list-item.class';
 import { expensesListMock } from '@app/expenses-list/mock-expenses-list';
 
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import{ ExpenseFormComponent } from '@app/expense-form/expense-form.component';
+import { MatDialog, MatDialogRef } from '@angular/material';
+
+
 
 @Component({
   selector: 'app-expenses-list',
@@ -10,10 +14,14 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
   styleUrls: ['./expenses-list.component.scss']
 })
 export class ExpensesListComponent implements OnInit {
+
+  fileNameDialogRef: MatDialogRef<ExpenseFormComponent>;
+
+
   expensesList: ExpensesListItem[];
   numOpts: number[] = [10, 20, 30];
   numOptSelected: number;
-  constructor(private spinnerService: Ng4LoadingSpinnerService) {
+  constructor(private spinnerService: Ng4LoadingSpinnerService , private dialog: MatDialog) {
 
   }
 
@@ -21,6 +29,12 @@ export class ExpensesListComponent implements OnInit {
     this.getData();
   }
 
+  
+  openAddExpenseDialog() {
+    this.fileNameDialogRef = this.dialog.open(ExpenseFormComponent, {
+      height:'90%', width: '600px' ,
+      });   
+  }
   getData() {
     this.spinnerService.show();
     setTimeout(() => {

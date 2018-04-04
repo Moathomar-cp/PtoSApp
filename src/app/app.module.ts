@@ -6,7 +6,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateModule } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-
 import { environment } from '@env/environment';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
@@ -20,6 +19,7 @@ import { ProductsModule } from '@app/products/products.module';
 import { NgxDatatableModule } from "@swimlane/ngx-datatable";
 import { ExpensesListModule } from './expenses-list/expenses-list.module';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { ExpenseFormComponent } from './expense-form/expense-form.component';
 import { MatDialogModule } from '@angular/material';
 import { CategoryFormModule } from './category-form/category-form.module'
 import { ProductDialogModule } from './product-dialog/product-dialog.module';
@@ -28,11 +28,14 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { ProductCategoriesComponent } from './product-categories/product-categories.component';
+
 import { ProvidersModule } from './providers/providers.module';
 import { CategoriesModule } from './categories/categories.module';
 
 @NgModule({
   imports: [
+
     BrowserModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     FormsModule,
@@ -54,6 +57,12 @@ import { CategoriesModule } from './categories/categories.module';
     ExpensesListModule,
     Ng4LoadingSpinnerModule.forRoot(),
     ProductsModule,
+    MatDialogModule,
+    AngularFireModule.initializeApp(environment.firebase,'testDB'),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule ,
+    AppRoutingModule,
     CategoryFormModule,
     ProvidersModule,
     CategoriesModule,
@@ -63,9 +72,10 @@ import { CategoriesModule } from './categories/categories.module';
   exports: [
     NgxDatatableModule
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, ExpenseFormComponent, ProductCategoriesComponent],
   providers: [
   ],
+  entryComponents: [ExpenseFormComponent] ,
   bootstrap: [AppComponent]
 })
 export class AppModule { }

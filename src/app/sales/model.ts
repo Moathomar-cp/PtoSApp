@@ -7,6 +7,6 @@ export class SalesListItem {
   discount : number ;
   total:number;
   createdBy : string ;
-  totalItems : number
+  totalItems : number ;
   status: string ;
 }
