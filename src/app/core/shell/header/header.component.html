@@ -27,16 +27,10 @@
       <mat-icon>products</mat-icon>
       <span translate>products</span>
     </button>
-    
-    <div class = "btn-group">
-        <button mat-button type = "button" class = "btn btn-default dropdown-toggle" data-toggle = "dropdown">
-            <i class="fa fa-bookmark" style="font-size:14px;"></i>Categories 
-        </button>
-        <ul class = "dropdown-menu" role = "menu">
-            <li><a routerLink="/categories" routerLinkActive="active">Products</a></li>
-              <li><a routerLink="/categories" routerLinkActive="active">Expenses</a></li>
-        </ul>
-     </div>
+    <button mat-button routerLink="/categories" routerLinkActive="active">
+      <mat-icon>products</mat-icon>
+      <span translate>Categories</span>
+    </button>
     
   </div>
   <span fxFlex></span>

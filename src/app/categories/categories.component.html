@@ -2,7 +2,6 @@
   <br />
   <br />
   <br />
-  
   <!-- show -->
   <div class="show">
     <label>Show
@@ -38,8 +37,8 @@
     </thead>
     <tbody>
 
-      <tr *ngFor="let item of categoriesItems">
-        <td>{{item.name}}</td>
+        <tr *ngFor="let item of category$ | async">        
+          <td>{{item.name}}</td>
         <td>{{item.createdAt}}</td>
         <td>
           <div class="action">
