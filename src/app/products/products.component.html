@@ -2,45 +2,44 @@
 <div id="entries" class="container selectors">
   <label class="lable">Show</label>
   <select class="form-control">
-    <option value="10">10</option>
-    <option value="25">25</option>
-    <option value="50">50</option>
-    <option value="100">100</option>
+      <option *ngFor="let entry of entries" [value]="entry.id">{{entry.value}}</option>
+
   </select>
   <label class="lable">entries</label>
   <!-- End of Entries -->
 
 
-  <!-- Fillter -->
-  <div class="fillter">
+  <!-- Filter -->
+  <div class="filter">
     <label class="lable">Supplier</label>
     <select class="form-control supplier">
-      <option value="0">All</option>
-      <option value="1">supplier1</option>
-      <option value="2">supplier2</option>
-      <option value="3">supplier3</option>
+      <option *ngFor="let supplier of suppliers" [value]="supplier.id">{{supplier.name}}</option>
     </select>
 
     <label class="lable">Product type</label>
     <select class="form-control product-type">
-      <option value="10">All</option>
-      <option value="25">Standard</option>
-      <option value="50">Service</option>
-      <option value="100">Combination</option>
+      <option *ngFor="let type of types" [value]="type.id">{{type.name}}</option>
     </select>
 
-    <button class="btn btn-default">Apply fillter</button>
+    <button class="btn btn-default">Apply filter</button>
+  </div>
+  <!-- End of Filter -->
+
+  <div>
+    <button class="btn add-btn" (click)="openProductFormModal()">Add Product</button>
+    <div>
+      <button class="btn add-btn" (click)="openCategoryFormModal()">Add Categroy</button>
+    </div>
   </div>
   <!-- End of Fillter -->
 
-  <div>
-    <button class="btn add-btn">Add Product</button>
-  </div>
+
+
 
   <!-- Search section -->
   <div class="search">
     <label>Search:</label>
-    <input type="text">
+    <input [(ngModel)]="searchText" placeholder="search products">
   </div>
   <!-- End of Search -->
 
@@ -51,17 +50,11 @@
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
-          <th>Code</th>
-          <th>Name</th>
-          <th>Category</th>
-          <th>Product Description</th>
-          <th>Tax(%)</th>
-          <th>Price</th>
-          <th>Action</th>
+          <th *ngFor="let property of properties">{{property}}</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let product of products">
+        <tr *ngFor="let product of products | filter : searchText">
           <td>{{product.code}}</td>
           <td>{{product.name}}</td>
           <td>{{product.category}}</td>
@@ -95,3 +88,5 @@
     </table>
   </div>
   <!-- End of Products table -->
+
+

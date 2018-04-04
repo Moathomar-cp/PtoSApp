@@ -12,6 +12,7 @@ export const environment = {
     'en-US',
     'fr-FR'
   ],
+
   firebase: {
     
 apiKey: 'AIzaSyCzy5B2_jDI7IuYEtrMH00_zkKFoDTu2-k',

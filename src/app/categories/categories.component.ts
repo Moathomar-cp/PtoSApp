@@ -5,6 +5,8 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { AngularFirestore ,AngularFirestoreCollection} from 'angularfire2/firestore';
 import{Category} from './category';
 import { Observable } from 'rxjs/Observable';
+import { CategoryFormComponent } from '../category-form/category-form.component';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-categories',
@@ -15,9 +17,11 @@ export class CategoriesComponent implements OnInit {
   categoryCollectionRef: AngularFirestoreCollection<Category>;
   category$: Observable<Category[]>;
 
-  constructor(private spinnerService: Ng4LoadingSpinnerService,private afs: AngularFirestore) {
+  constructor(private spinnerService: Ng4LoadingSpinnerService, public dialog: MatDialog,private afs: AngularFirestore) {
     this.getCategoryList(afs);
    }
+  categoryDialogRef: MatDialogRef<CategoryFormComponent>;
+
 
   ngOnInit() {}
 
@@ -30,4 +34,12 @@ getCategoryList(afs:AngularFirestore){
       this.spinnerService.hide();
     }, 1000);
   }
+
+  openCategoryFormModal() {
+    this.categoryDialogRef = this.dialog.open(CategoryFormComponent, {
+      width: '600px',
+      height: '300px',
+    });
+  }
+
 }
