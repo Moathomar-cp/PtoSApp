@@ -7,6 +7,13 @@ import { MatFormFieldModule, MatFormFieldControl } from '@angular/material';
 import { MatInputModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '@env/environment';
+import { ProvidersModule } from '../providers/providers.module';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -14,7 +21,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     MatInputModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, 
+    AngularFireAuthModule, 
+    AngularFireStorageModule,
+    ProvidersModule
   ],
   declarations: [CategoryFormComponent],
   entryComponents: [CategoryFormComponent]
