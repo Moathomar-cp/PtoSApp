@@ -16,12 +16,10 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class CategoriesComponent implements OnInit {
   categoryCollectionRef: AngularFirestoreCollection<Category>;
   category$: Observable<Category[]>;
-
+  categoryDialogRef: MatDialogRef<CategoryFormComponent>;
   constructor(private spinnerService: Ng4LoadingSpinnerService, public dialog: MatDialog,private afs: AngularFirestore) {
     this.getCategoryList(afs);
    }
-  categoryDialogRef: MatDialogRef<CategoryFormComponent>;
-
 
   ngOnInit() {}
 
