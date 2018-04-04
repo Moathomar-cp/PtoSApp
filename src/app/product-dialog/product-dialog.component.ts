@@ -16,24 +16,28 @@ import { ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class ProductDialogComponent implements OnInit {
-  types: string[] = [
-    'Standard',
-    'Service',
-    'Combination'
+
+  types: { id: number, name: string }[] = [
+    { id: 0, name: 'Standard' },
+    { id: 1, name: 'Service' },
+    { id: 2, name: 'Combination' }
   ];
 
 
-  categories: string[] = [
-    'Drinks',
-    'Sweet',
-    'Food',
+  categories: { id: number, name: string, createdAt: string | Date }[] = [
+    { id: 0, name: 'Standard', createdAt: '' },
+    { id: 1, name: 'Service', createdAt: '' },
+    { id: 2, name: 'Combination', createdAt: '' }
   ];
 
-  suppliers: string[] = [
-    'supplier1',
-    'supplier2',
-    'supplier3',
+
+
+  suppliers: { id: number, name: string, phone: number, email: string, note: string }[] = [
+    { id: 0, name: 'supplier1', phone: 0, email: '', note: '' },
+    { id: 1, name: 'supplier2', phone: 0, email: '', note: '' },
+    { id: 2, name: 'suppliers3', phone: 0, email: '', note: '' }
   ];
+
 
 
   taxMethod: string[] = [
@@ -41,22 +45,23 @@ export class ProductDialogComponent implements OnInit {
    'exclusive'
   ];
 
-  formModel :ProuctFormModel = {
+  
+  productModel: ProuctFormModel = {
     typeId: "Type",
     code: 0,
     name: "Name",
     categoryId: "Category",
     supplierId: "Supplier",
-    purchasePrice: "Purchase price",
+    purchasePrice: 0,
     tax: "Tax",
     taxMethodId: "Tax method",
     price: 0,
-    productUnit: "Product unit",
+    productUnit: "kg",
     alertQuantity: 0,
     description: "",
   };
 
-  constructor(private dialogRef: MatDialogRef<ProductDialogComponent>) { }
+
   ngOnInit() {
 
   }
