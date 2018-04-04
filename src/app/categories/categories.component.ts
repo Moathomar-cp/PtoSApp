@@ -33,6 +33,7 @@ getCategoryList(afs:AngularFirestore){
     }, 1000);
   }
 
+  
   openCategoryFormModal() {
     this.categoryDialogRef = this.dialog.open(CategoryFormComponent, {
       width: '600px',
