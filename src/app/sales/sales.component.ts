@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { SalesListItem } from './model';
 import { SALESITEMS } from './mock-data';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
-
-//declare var hi:any;
+import { AngularFirestore ,AngularFirestoreCollection} from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
+import { Sales } from './sale';
 
 @Component({
   selector: 'app-sales',
@@ -11,26 +12,21 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
   styleUrls: ['./sales.component.scss']
 })
 export class SalesComponent implements OnInit {
+  categoryCollectionRef: AngularFirestoreCollection<Sales>;
+  sale$: Observable<Sales[]>;
 
+  constructor(private spinner: Ng4LoadingSpinnerService,private afs: AngularFirestore) {
+    this.getSaleList(afs);
+   }
+  ngOnInit() {}
 
-  salesItems: SalesListItem[] = [];
-  constructor(private spinner: Ng4LoadingSpinnerService) {
-  }
-
-  ngOnInit() {
-    this.getSalesList();
-  }
-
-  getSalesList() {
+getSaleList(afs:AngularFirestore){
     this.spinner.show();
+    //get categories 
+    this.categoryCollectionRef = this.afs.collection<Sales>('sales');
+    this.sale$ = this.categoryCollectionRef.valueChanges();
     setTimeout(() => {
-      this.salesItems = SALESITEMS;
       this.spinner.hide();
     }, 1000);
   }
-
-
-
-
-
 }
