@@ -3,7 +3,8 @@ import { MatDialogModule } from '@angular/material';
 import { MatDialogRef } from '@angular/material';
 import { ViewEncapsulation } from '@angular/core';
 import { CategoriesProvider } from '@app/providers/categories';
-import {CategoryFormModel} from './type.model'
+import { CategoryFormModel } from './type.model'
+import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-category-form',
   templateUrl: './category-form.component.html',
@@ -12,11 +13,16 @@ import {CategoryFormModel} from './type.model'
 })
 export class CategoryFormComponent implements OnInit {
 
-  categoryModel : CategoryFormModel = {
-    name :'Category name',
-    createdAt :''
+  categoryModel: CategoryFormModel = {
+    id: '',
+    name: 'Category name',
+    createdAt: ''
   };
 
+  get categories() {
+    return this.categrorieSrvc.getList()
+  }
+  
   constructor(private dialogRef2: MatDialogRef<CategoryFormComponent>, private categrorieSrvc: CategoriesProvider) { }
 
   ngOnInit() {
@@ -27,5 +33,7 @@ export class CategoryFormComponent implements OnInit {
     this.categoryModel.createdAt = new Date().toLocaleString();
     this.categrorieSrvc.add(this.categoryModel);
   }
+
+ 
 
 }
