@@ -9,7 +9,7 @@
       <div class="form-group">
         <label for="type">Type</label>
         <select class="form-control" [(ngModel)]="productModel.typeId" id="typeId" name="typeId">
-          <option [value]="type.id" *ngFor="let type of types">{{type.name}}</option>
+          <option [value]="type.id" *ngFor="let type of productTypes |async">{{type.name}}</option>
         </select>
       </div>
 
@@ -29,7 +29,7 @@
       <div class="form-group">
         <label for="category">Category</label>
         <select class="form-control" [(ngModel)]="productModel.categoryId" [ngModelOptions]="{standalone: true}" id="categoryId">
-          <option  [value]="category.id"  *ngFor="let category of categories" >{{category.name}}</option>
+          <option  [value]="category.id"  *ngFor="let category of categories|async " >{{category.name}}</option>
         </select>
       </div>
 
@@ -38,7 +38,7 @@
       <div class="form-group">
         <label for="Supplier">Supplier</label>
         <select class="form-control" [(ngModel)]="productModel.supplierId" [ngModelOptions]="{standalone: true}" id="supplierId">
-          <option  [value]="supplier.id" *ngFor="let supplier of suppliers">{{supplier.name}}</option>
+          <option  [value]="supplier.id" *ngFor="let supplier of suppliers |async">{{supplier.name}}</option>
         </select>
       </div>
 

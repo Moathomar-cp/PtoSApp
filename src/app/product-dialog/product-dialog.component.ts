@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-/* Import Mat Dialog */
+
 import { MatDialogModule } from '@angular/material';
 import { MatDialogRef } from '@angular/material';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ProuctFormModel } from './type.model';
+import { ProductFormService } from '../product-dialog/productForm.service';
 import { ProductsProvider } from '@app/providers/products';
-/* "ViewEncapsulation" used to be able to edit mat-dialog CSS classes 
-specialy : to get rid of  white spaces in  Material modal dialog*/
+import { SuppliersProvider } from '@app/providers/suppliers';
+import { TypesProvider } from '@app/providers/productTypes';
+
 import { ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'app-product-dialog',
@@ -16,27 +18,9 @@ import { ViewEncapsulation } from '@angular/core';
 })
 export class ProductDialogComponent implements OnInit {
 
-  types: { id: number, name: string }[] = [
-    { id: 0, name: 'Standard' },
-    { id: 1, name: 'Service' },
-    { id: 2, name: 'Combination' }
-  ];
-
-
-  categories: { id: number, name: string, createdAt: string | Date }[] = [
-    { id: 0, name: 'Standard', createdAt: '' },
-    { id: 1, name: 'Service', createdAt: '' },
-    { id: 2, name: 'Combination', createdAt: '' }
-  ];
-
-
-
-  suppliers: { id: number, name: string, phone: number, email: string, note: string }[] = [
-    { id: 0, name: 'supplier1', phone: 0, email: '', note: '' },
-    { id: 1, name: 'supplier2', phone: 0, email: '', note: '' },
-    { id: 2, name: 'suppliers3', phone: 0, email: '', note: '' }
-  ];
-
+  categories: any;
+  suppliers: any;
+  productTypes: any;
 
 
   taxMethod: string[] = [
@@ -44,14 +28,14 @@ export class ProductDialogComponent implements OnInit {
     'exclusive'
   ];
 
-  
+
   productModel: ProuctFormModel = {
     typeId: "Type",
     code: 0,
     name: "Name",
     categoryId: "Category",
     supplierId: "Supplier",
-    purchasePrice: 0,
+    purchasePrice: "",
     tax: "Tax",
     taxMethodId: "Tax method",
     price: 0,
@@ -60,17 +44,22 @@ export class ProductDialogComponent implements OnInit {
     description: "",
   };
 
+  constructor(private dialogRef: MatDialogRef<ProductDialogComponent>,
+    private productFormsrv: ProductFormService) { }
 
-  constructor(private dialogRef: MatDialogRef<ProductDialogComponent>, private productieSrvc: ProductsProvider) { }
   ngOnInit() {
-
+    this.categories = this.productFormsrv.categories;
+    this.suppliers = this.productFormsrv.suppliers;
+    this.productTypes = this.productFormsrv.types;
   }
 
 
   addProduct() {
-    this.productieSrvc.add(this.productModel);
+    this.productFormsrv.addProduct(this.productModel);
     this.dialogRef.close();
   }
+
+
 
 
 }

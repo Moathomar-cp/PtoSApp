@@ -14,6 +14,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '@env/environment';
 import { ProvidersModule } from '../providers/providers.module';
 
+import { ProductFormService } from './productForm.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -28,6 +30,7 @@ import { ProvidersModule } from '../providers/providers.module';
     ProvidersModule,
     ReactiveFormsModule
   ],
-  declarations: [ProductDialogComponent]
+  declarations: [ProductDialogComponent],
+  providers: [ProductFormService]
 })
 export class ProductDialogModule { }
