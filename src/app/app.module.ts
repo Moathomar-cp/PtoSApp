@@ -30,7 +30,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ProvidersModule } from './providers/providers.module';
 import { CategoriesModule } from './categories/categories.module';
-
+import { ProductFormService } from './product-dialog/productForm.service';
 @NgModule({
   imports: [
     BrowserModule,
@@ -64,7 +64,7 @@ import { CategoriesModule } from './categories/categories.module';
     NgxDatatableModule
   ],
   declarations: [AppComponent],
-  providers: [
+  providers: [ProductFormService
   ],
   bootstrap: [AppComponent]
 })
