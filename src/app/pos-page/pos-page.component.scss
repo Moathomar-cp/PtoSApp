@@ -1,10 +1,36 @@
+.main-row{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 .right-col{
     background-color:#ecf0f1;
-    margin-top: 10px;   
+    border: 3px solid white;
+    border-radius: 5px;  
+    overflow: hidden;
+    margin-top:10px;
+    padding: 0;
+
+}
+
+.left-col{
+    margin-top: 10px;  
+    background-color: #ecf0f1;
+    margin-top: 10px;
+    border: 3px solid white;
+    border-radius: 5px; 
 }
 
 .categories-filter{
    margin-top: 10px; 
+   margin-left: 10px;
+}
+
+
+.btns-group{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 0 10px;
 }
 
 .categories{
@@ -30,10 +56,15 @@
 
 hr {
     border: 3px solid rgb(172, 162, 162);
-    margin-right: 5px;
+    margin-left:10px;
+    margin-right: 10px;
+    
   }
 
-
+.search{
+    margin-left:10px;
+    margin-right: 10px;
+}
 
   .search-icon{
      background-color: #fff;
@@ -50,6 +81,8 @@ hr {
       
   }
 
-  .search{
+  .search-input{
       border-right: none;
   }
+
+
