@@ -8,6 +8,10 @@
             <span translate>Home</span>
           </a>
           <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/pos" routerLinkActive="active" (click)="sidenav.close()">
+            <span translate>POS</span>
+          </a>
+          <mat-divider></mat-divider>
             <a mat-list-item routerLink="/expense" routerLinkActive="active" (click)="sidenav.close()">
               <span translate><i class="fa fa-usd"></i> Expense</span>
             </a>
@@ -24,6 +28,7 @@
             <span translate>categories</span>
           </a>
           <mat-divider></mat-divider>
+
         </mat-list>
       </nav>
     </mat-sidenav>
