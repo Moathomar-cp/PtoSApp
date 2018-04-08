@@ -59,8 +59,9 @@ import { PosPageComponent } from './pos-page/pos-page.component';
     CategoryFormModule,
     ProvidersModule,
     CategoriesModule,
-    AppRoutingModule,
-    PosPageModule
+    PosPageModule,
+    AppRoutingModule
+   
 
   ],
   exports: [
