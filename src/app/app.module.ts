@@ -32,6 +32,7 @@ import { ProductCategoriesComponent } from './product-categories/product-categor
 
 import { ProvidersModule } from './providers/providers.module';
 import { CategoriesModule } from './categories/categories.module';
+import { PosPageModule } from './pos-page/pos-page.module';
 
 @NgModule({
   imports: [
@@ -66,7 +67,8 @@ import { CategoriesModule } from './categories/categories.module';
     CategoryFormModule,
     ProvidersModule,
     CategoriesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PosPageModule
 
   ],
   exports: [
