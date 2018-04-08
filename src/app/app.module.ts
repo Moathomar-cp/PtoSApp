@@ -31,6 +31,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ProvidersModule } from './providers/providers.module';
 import { CategoriesModule } from './categories/categories.module';
 import { ProductFormService } from './product-dialog/productForm.service';
+import { PosPageModule } from './pos-page/pos-page.module';
+import { PosPageComponent } from './pos-page/pos-page.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -57,13 +59,14 @@ import { ProductFormService } from './product-dialog/productForm.service';
     CategoryFormModule,
     ProvidersModule,
     CategoriesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PosPageModule
 
   ],
   exports: [
     NgxDatatableModule
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, PosPageComponent],
   providers: [ProductFormService
   ],
   bootstrap: [AppComponent]
