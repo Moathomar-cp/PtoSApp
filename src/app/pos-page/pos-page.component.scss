@@ -1,0 +1,29 @@
+.right-col{
+    background-color:#ecf0f1;
+    margin-top: 10px; 
+}
+ 
+.categories-filter{
+   margin-top: 10px; 
+}
+
+.categories{
+    background-color: #E2E2E2;
+    border-radius: 3px;
+    border-bottom: 3px solid #6EC89B;
+    margin-right: 5px;
+    padding: 5px 10px;
+}
+
+.home-btn{
+    margin-left: 10px;
+    color: #6B6B6B;
+}
+
+
+.categories-filter button:hover{
+    
+        background-color: #6B6B6B;
+        color: #E2E2E2;
+        border-bottom: 3px solid #f65e48;
+}
