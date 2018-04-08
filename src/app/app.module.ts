@@ -67,9 +67,8 @@ import { PosPageModule } from './pos-page/pos-page.module';
     CategoryFormModule,
     ProvidersModule,
     CategoriesModule,
-    AppRoutingModule,
-    PosPageModule
-
+    PosPageModule,
+    AppRoutingModule
   ],
   exports: [
     NgxDatatableModule
