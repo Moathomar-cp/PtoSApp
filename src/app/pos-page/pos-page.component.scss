@@ -24,14 +24,15 @@
 .categories-filter{
    margin-top: 10px; 
    margin-left: 10px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   flex-wrap: unset;
+   overflow-x: scroll;
+   overflow-y: hidden;
+   margin: 0 10px;
 }
 
 
-.btns-group{
-    overflow-x: scroll;
-    overflow-y: hidden;
-    margin: 0 10px;
-}
 
 .categories{
     background-color: #E2E2E2;
@@ -54,16 +55,11 @@
     border-bottom: 3px solid #f65e48;
 }
 
-hr {
-    border: 3px solid rgb(172, 162, 162);
-    margin-left:10px;
-    margin-right: 10px;
-    
-  }
+
+
 
 .search{
-    margin-left:10px;
-    margin-right: 10px;
+    margin: 10px;
 }
 
   .search-icon{
