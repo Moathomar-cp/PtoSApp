@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoriesProvider } from '@app/providers/categories';
 
 @Component({
   selector: 'app-pos-page',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PosPageComponent implements OnInit {
 
-  constructor() { }
+
+  get categories() {
+    return this.categoriesProvider.getList();
+  }
+
+  constructor(private categoriesProvider: CategoriesProvider) { }
 
   ngOnInit() {
   }
 
 }
+

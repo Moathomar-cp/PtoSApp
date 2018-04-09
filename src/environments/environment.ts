@@ -14,11 +14,11 @@ export const environment = {
   ],
 
   firebase: {
-    apiKey: 'AIzaSyCzy5B2_jDI7IuYEtrMH00_zkKFoDTu2-k',
-    authDomain: 'ptos-e178e.firebaseapp.com',
-    databaseURL: 'https://ptos-e178e.firebaseio.com/',
-    projectId: 'ptos-e178e',
-    storageBucket: 'ptos-e178e.appspot.com',
-    messagingSenderId: '714481396961'
+        apiKey: "AIzaSyA5CLPvp0CMpNePd6OHmSpqUSMKErG9tiI",
+        authDomain: "angularfb-ff0f6.firebaseapp.com",
+        databaseURL: "https://angularfb-ff0f6.firebaseio.com",
+        projectId: "angularfb-ff0f6",
+        storageBucket: "angularfb-ff0f6.appspot.com",
+        messagingSenderId: "704140842690"
   }
 };

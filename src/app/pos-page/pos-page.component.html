@@ -5,11 +5,8 @@
     <div class="row categories-filter">
       <button class=" categories home-btn">
         <i class="fa fa-home"></i>
-      </button>      
-      <button class="categories">COMPUTERS</button>
-      <button class="categories">CLOTHES</button>
-      <button class="categories">SERVICES</button>
-      <button class="categories">FRUITS</button>
+      </button>   
+      <button class="categories" *ngFor="let cat of categories|async;">{{cat.name}}</button>
     </div>
 
     <div col-sm-12 class="search">
