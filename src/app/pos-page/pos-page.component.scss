@@ -3,6 +3,7 @@
     margin-left: 10px;
 }
 
+
 .right-col{
     background-color:#ecf0f1;
     border: 3px solid white;
@@ -13,6 +14,7 @@
 
 }
 
+
 .left-col{
     margin-top: 10px;  
     background-color: #ecf0f1;
@@ -20,6 +22,7 @@
     border: 3px solid white;
     border-radius: 5px; 
 }
+
 
 .categories-filter{
    margin-top: 10px; 
@@ -42,14 +45,14 @@
     padding: 5px 10px;
 }
 
+
 .home-btn{
     margin-left: 10px;
     color: #6B6B6B;
 }
 
 
-.categories-filter button:hover{
-    
+.active, .categories:hover {
     background-color: #6B6B6B;
     color: #E2E2E2;
     border-bottom: 3px solid #f65e48;
@@ -57,12 +60,12 @@
 
 
 
-
 .search{
     margin: 10px;
 }
 
-  .search-icon{
+
+ .search-icon{
      background-color: #fff;
      margin-right: 10px;
      border: 1px solid #ccc;
@@ -70,13 +73,14 @@
      padding: 5px;
   }
 
+
   .search-btn{
     background-color: transparent;
-    border:none;
-     
-      
+    border:none;     
   }
 
+
+  
   .search-input{
       border-right: none;
   }
