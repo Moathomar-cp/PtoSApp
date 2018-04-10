@@ -1,0 +1,44 @@
+.product-list{
+    background-color:#ecf0f1;  
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height:330px;
+    margin-top: 20px;
+}
+
+
+.card-deck {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.card-deck .card {
+    display: flex;
+    flex:unset;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    height: 150px;
+    text-align: center;
+}
+
+.card {
+    color:#fff;
+    background-color: rgba(24, 35, 70, 0.87);
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 10px;
+    font-size: 10px;
+}
+
+
+.card-title{
+padding-top: 10px;
+font-size: 12px;
+}
+
+
+.card-deck .card:hover{
+opacity: 0.5;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
