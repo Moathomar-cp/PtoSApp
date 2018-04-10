@@ -3,22 +3,26 @@
 
   <div class="col-md-7 right-col">
     <div class="row categories-filter">
-      <button class=" categories home-btn">
+      <button class=" categories home-btn active" (click)="onClick('All','')">
         <i class="fa fa-home"></i>
-      </button>   
-      <button class="categories" *ngFor="let cat of categories|async;">{{cat.name}}</button>
+      </button>
+      <button class="categories" *ngFor="let category of categories|async" (click)="onClick(category.name,category.id)">{{category.name}}</button>
     </div>
 
     <div col-sm-12 class="search">
-    <div class="input-group">
-      <input type="text" class="form-control search-input" id="search" placeholder="Search">
-      <span class="search-icon">
-        <button type="submit" class="search-btn">
-          <span class="fa fa-search"></span>
-        </button>
-      </span>
+      <div class="input-group">
+        <input type="text" [(ngModel)]="searchText" class="form-control search-input" id="search" placeholder="Search">
+        <span class="search-icon">
+          <button type="submit" class="search-btn">
+            <span class="fa fa-search"></span>
+          </button>
+        </span>
+      </div>
     </div>
-    </div>
+
+
+    <app-products-list [category]="selectedCategory" [filteredProducts]="products" [searchText]="searchText"> </app-products-list>
+
   </div>
 
 </div>
