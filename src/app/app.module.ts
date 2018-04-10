@@ -33,6 +33,10 @@ import { CategoriesModule } from './categories/categories.module';
 import { ProductFormService } from './product-dialog/productForm.service';
 import { PosPageModule } from './pos-page/pos-page.module';
 import { PosPageComponent } from './pos-page/pos-page.component';
+
+
+import { ProductsListComponent } from './pos-page/products-list/products-list.component';
+import { ProductsListModule } from './pos-page/products-list/products-list.module';
 @NgModule({
   imports: [
     BrowserModule,
@@ -60,6 +64,7 @@ import { PosPageComponent } from './pos-page/pos-page.component';
     ProvidersModule,
     CategoriesModule,
     PosPageModule,
+    ProductsListModule,
     AppRoutingModule
    
 
@@ -67,7 +72,7 @@ import { PosPageComponent } from './pos-page/pos-page.component';
   exports: [
     NgxDatatableModule
   ],
-  declarations: [AppComponent, PosPageComponent],
+  declarations: [AppComponent, PosPageComponent,ProductsListComponent],
   providers: [ProductFormService
   ],
   bootstrap: [AppComponent]
