@@ -1,11 +1,23 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 const COLLECTION_NAME = "products";
 
+interface Product {
+  code: number;
+  name: string;
+  category: string;
+  description: string;
+  tax: string;
+  price: string;
+  action: string;
+}
+
 @Injectable()
 export class ProductsProvider {
-  products: Observable<any[]>;
+
+  products: Observable<Product[]>;
+  productsCol: AngularFirestoreCollection<Product>;
 
   get collection() {
     return this.db.collection(COLLECTION_NAME)
@@ -13,7 +25,8 @@ export class ProductsProvider {
 
 
   constructor(private db: AngularFirestore) {
-    this.products = db.collection(COLLECTION_NAME).valueChanges();
+    this.productsCol = db.collection(COLLECTION_NAME);
+    this.products = this.productsCol.valueChanges();
   }
 
 
@@ -34,6 +47,23 @@ export class ProductsProvider {
 
 
   getList() {
+    return this.products;
+  }
+
+
+  getProducts(category: string, categoryId: string) {
+
+    if (category == "All") {
+      this.productsCol = this.db.collection(COLLECTION_NAME);
+      this.products = this.productsCol.valueChanges();
+    }
+
+    else {
+      this.productsCol = this.db.collection('products', ref => ref.where('categoryId', '==', categoryId));
+      this.products = this.productsCol.valueChanges();
+
+    }
+
     return this.products;
   }
 
