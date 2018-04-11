@@ -37,6 +37,10 @@ import { PosPageComponent } from './pos-page/pos-page.component';
 
 import { ProductsListComponent } from './pos-page/products-list/products-list.component';
 import { ProductsListModule } from './pos-page/products-list/products-list.module';
+
+
+import { FilterPipe } from './pos-page/products-list/filter.pipe';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -72,7 +76,7 @@ import { ProductsListModule } from './pos-page/products-list/products-list.modul
   exports: [
     NgxDatatableModule
   ],
-  declarations: [AppComponent, PosPageComponent,ProductsListComponent],
+  declarations: [AppComponent, PosPageComponent,ProductsListComponent,FilterPipe],
   providers: [ProductFormService
   ],
   bootstrap: [AppComponent]
